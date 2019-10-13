@@ -5,37 +5,37 @@
   "type": "object",
   "properties": {
     "url": {
-      "description": "Response for submitted urls"
+      "description": "Response for submitted urls",
       "type": "object",
       "minOccur": 0,
       "properties": {
         "items": {
-          "description": "Array listing results"
+          "description": "Array listing results",
           "minOccur": 0,
           "items": [
             {
               "type": "object",
               "properties": {
                 "item": {
-                  "type": "string"
+                  "type": "string",
                   "description": "The entity to search",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "response": {
-                  "type": "boolean"
+                  "type": "boolean",
                   "description": "'True' if a match has been found. 'False' if no match has been found",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "response_text": {
-                  "type": "string"
+                  "type": "string",
                   "description": "Just a human readble representation of the 'response' item",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "related_urls": {
-                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty"
+                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
                   "minOccur": 1,
                   "maxOccur": 1,
                   "type": "array",
@@ -116,37 +116,37 @@
       ]
     },
       "ip": {
-      "description": "Response for submitted ips"
+      "description": "Response for submitted ips",
       "type": "object",
       "minOccur": 0,
       "properties": {
         "items": {
-          "description": "Array listing results"
+          "description": "Array listing results",
           "minOccur": 0,
           "items": [
             {
               "type": "object",
               "properties": {
                 "item": {
-                  "type": "string"
+                  "type": "string",
                   "description": "The entity to search",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "response": {
-                  "type": "boolean"
+                  "type": "boolean",
                   "description": "'True' if a match has been found. 'False' if no match has been found",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "response_text": {
-                  "type": "string"
+                  "type": "string",
                   "description": "Just a human readble representation of the 'response' item",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "related_urls": {
-                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty"
+                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
                   "minOccur": 1,
                   "maxOccur": 1,
                   "type": "array",
@@ -227,37 +227,37 @@
       ]
     },
     "domain": {
-      "description": "Response for submitted domains"
+      "description": "Response for submitted domains",
       "type": "object",
       "minOccur": 0,
       "properties": {
         "items": {
-          "description": "Array listing results"
+          "description": "Array listing results",
           "minOccur": 0,
           "items": [
             {
               "type": "object",
               "properties": {
                 "item": {
-                  "type": "string"
+                  "type": "string",
                   "description": "The entity to search",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "response": {
-                  "type": "boolean"
+                  "type": "boolean",
                   "description": "'True' if a match has been found. 'False' if no match has been found",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "response_text": {
-                  "type": "string"
+                  "type": "string",
                   "description": "Just a human readble representation of the 'response' item",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
                 "related_urls": {
-                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty"
+                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
                   "minOccur": 1,
                   "maxOccur": 1,
                   "type": "array",
