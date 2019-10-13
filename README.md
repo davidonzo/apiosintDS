@@ -1,7 +1,8 @@
-# DigitalSide-API v.0.1
+# DigitalSide-API v.1.0
 On demand query API for OSINT.digitalside.it project. You can query for souspicious IPs (just IPv4 supported at the moment), domains and urls.
 
 ## Install
+Install python3 setuptools package according your distribution
 ```
 ~$ cd /your/path/src/
 ~$ git clone https://github.com/davidonzo/apiosintDS.git
