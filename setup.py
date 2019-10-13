@@ -50,7 +50,12 @@ setup(
 		'Programming Language :: Python :: 3'
 	],
 	packages=["apiosintDS", "apiosintDS.modules"],
-	
+	package_data={
+		'apiosintDS': [
+			'schema/schema.json',
+			'README.md'
+			], 
+	},
 	install_requires=requirements,
 
 	entry_points={
