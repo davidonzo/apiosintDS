@@ -1,5 +1,5 @@
 # DigitalSide-API v.1.0
-On demand query API for OSINT.digitalside.it project. You can query for souspicious IPs (just IPv4 supported at the moment), domains and urls.
+On demand query API for [OSINT.digitalside.it](https://osint.digitalside.it) project. You can query for souspicious IPs (just IPv4 supported at the moment), domains and urls.
 
 ## Install
 Install python3 setuptools package according your distribution
@@ -36,7 +36,7 @@ optional arguments:
                         specified the output will be redirect to the STDOUT.
   -v, --verbose         Include unmatched results in report.
   -c, --cache           Enable cache mode. Downloaded lists will be stored a
-                        won't be downloaded for the next 3 hours.
+                        won't be downloaded for the next 4 hours.
   -cd /path/to/cachedir, --cachedirectory /path/to/cachedir
                         The cache directory where the script check for cached
                         lists files and where them will be stored on cache
