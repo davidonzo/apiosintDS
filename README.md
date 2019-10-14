@@ -1,5 +1,6 @@
 # DigitalSide-API v.1.0
-On demand query API for [OSINT.digitalside.it](https://osint.digitalside.it) project. You can query for souspicious IPs (just IPv4 supported at the moment), domains and urls.
+On demand query API for [OSINT.digitalside.it](https://osint.digitalside.it) project. You can query for souspicious IPs, domains and urls
+Searches will be performed against the IoC lists stored in the [GitHub Threat-Intel](https://github.com/davidonzo/Threat-Intel) and [OSINT DS website](https://osint.digitalside.it/Threat-Intel/lists/)
 
 ## Install
 Install python3 setuptools package according your distribution
