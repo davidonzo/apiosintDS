@@ -108,9 +108,15 @@ class listutils():
         return cached
 
     def saveCache(self, entity, content):
-        cachefile = open(self.cachedir+"latest"+entity+"s.txt", "w")
-        cachefile.write(content)
-        cachefile.close()
+        try:
+            cachefile = open(self.cachedir+"latest"+entity+"s.txt", "w")
+            cachefile.write(content)
+            cachefile.close()
+        except IOError as e:
+            logging.error(e)
+            logging.error("Unable save list! Make sure you have write permission on file "+self.cachedir+"latest"+entity+"s.txt.")
+            logging.error("Retry without -c, --cache option.")
+            exit(1)
 
     def downloadLists(self, entity):
         ret = {}
@@ -164,5 +170,3 @@ class listutils():
         ret["input"] = self.entities
         ret["lookup"] = self.cached
         return ret
-        
-        

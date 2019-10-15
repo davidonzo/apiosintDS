@@ -127,9 +127,9 @@ def main():
     parser.add_argument("-f","--file", type=checkfile, action="store", metavar="/path/to/file.txt", dest="FILE", help="Path to file containing entities to search. Supported entities are IPv4/FQDN/URLs. It can't be used in combination with the --entity option.", default=None)
     parser.add_argument("-o", "--output", type=writablefile, action="store", metavar="/path/to/output.json", dest="OUTPUT", help="Path to output file (/path/to/output.json). If not specified the output will be redirect to the STDOUT.", default=None)
     parser.add_argument("-v", "--verbose", action="store_true", dest="VERBOSE", help="Include unmatched results in report.")
-    parser.add_argument("-c","--cache", action="store_true", dest="CACHE", help="Enable cache mode. Downloaded lists will be stored a won't be downloaded for the next 3 hours.")
+    parser.add_argument("-c","--cache", action="store_true", dest="CACHE", help="Enable cache mode. Downloaded lists will be stored a won't be downloaded for the next 4 hours.")
     parser.add_argument("-cd","--cachedirectory", type=writablecache, action="store", metavar="/path/to/cachedir", dest="DIRECTORY", help="The cache directory where the script check for cached lists files and where them will be stored on cache creation or update. Must be specified the same every script run unless your are using the system temp directory. Default is '"+tempfile.gettempdir()+"'", default=tempfile.gettempdir())
-    parser.add_argument("-cc","--clearcache", action="store_true", dest="CLEARCACHE", help="Force the script to download updated lists even if the 3 hours timeout has not yet been reached. Must be used in combination with --cachedirectory.")
+    parser.add_argument("-cc","--clearcache", action="store_true", dest="CLEARCACHE", help="Force the script to download updated lists even if the 3 hours timeout has not yet been reached. Must be used in combination with --cache.")
     parser.add_argument("-i","--info", action="store_true", dest="INFO", help="Print information about the program.")
     parser.add_argument("-s","--schema", action="store_true", dest="SCHEMA", help="Display the response json schema.")
 
@@ -155,8 +155,9 @@ def main():
         elif (args.ITEM != None) and (args.FILE != None):
             parser.error("Too much targets selected! Sorry, you can't specify both options --entity and --file.\nTry option -h or --help.")
             exit(1)
-        elif (args.CLEARCACHE == "1") and (args.CACHE == "0"):
-            args.CLEARCACHE == "0"
+        elif args.CLEARCACHE and not args.CACHE:
+            args.CLEARCACHE = False
+            logging.warning("Expected -c or --cache option declared. Ignoring all cache settings.\nTry option -h or --help.")
         lutils = listutils.listutils(args.ITEM, args.FILE, args.CACHE, args.DIRECTORY, args.CLEARCACHE)
         makelist = lutils.prepareLists()
         if isinstance(makelist, dict):
