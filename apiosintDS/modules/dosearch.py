@@ -4,16 +4,15 @@ import logging
 import json
 from datetime import datetime
 import pytz
+italyTZ = pytz.timezone("Europe/Rome")
+logging.basicConfig(format='%(levelname)s: %(message)s')
 try:
     from urllib.parse import urlparse
 except ImportError as ierror:
-    print(ierror)
-    print("To run this script you need to install the \"urllib\" module")
-    print("Try typing: \"pip3 install urllib3\"")
+    logging.error(ierror)
+    logging.error("To run this script you need to install the \"urllib\" module")
+    logging.error("Try typing: \"pip3 install urllib3\"")
     exit(0)
-
-italyTZ = pytz.timezone("Europe/Rome")
-logging.basicConfig(format='%(levelname)s: %(message)s')
 
 class dosearch():
     def __init__(self, lists, verbose):

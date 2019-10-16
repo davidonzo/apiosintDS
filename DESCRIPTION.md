@@ -2,21 +2,6 @@
 On demand query API for [OSINT.digitalside.it](https://osint.digitalside.it) project. You can query for souspicious IPs, domains and urls
 Searches will be performed against the IoC lists stored in the [GitHub Threat-Intel](https://github.com/davidonzo/Threat-Intel) and [OSINT.DigitalSide.it website](https://osint.digitalside.it/Threat-Intel/lists/)
 
-## Install via pip3
-### The easy way via pip
-```
-~# pip install apiosintDS
-```
-
-### Via python-setuptools
-```
-~$ cd /your/path/src/
-~$ git clone https://github.com/davidonzo/apiosintDS.git
-~$ cd apiosintDS/
-~$ python3 setup.py build
-~$ sudo python3 setup.py install
-```
-
 ## Usage
 ```
 ~$ apiosintDS -h

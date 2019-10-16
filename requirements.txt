@@ -1,4 +1,3 @@
-logging
 argparse
 pytz
 validators

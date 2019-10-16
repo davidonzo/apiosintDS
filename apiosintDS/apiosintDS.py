@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 import sys
+import logging
+import pytz
+logging.basicConfig(format='%(levelname)s: %(message)s')
 if (sys.version_info < (3, 0)):#NO MORE PYTHON 2!!! https://pythonclock.org/
-    print(" ########################### ERROR ###########################")
-    print(" =============================================================")
-    print("              Invalid python version detected: "+str(sys.version_info[0])+"."+str(sys.version_info[1]))
-    print(" =============================================================")
-    print("  It seems your are still using python 2 even if you should")
-    print("  now it will be retire next 2020.")
-    print("  For more info please read https://pythonclock.org/")
-    print(" =============================================================")
-    print("  Try again typing: python3 /path/to/"+sys.argv[0])
-    print(" =============================================================")
-    print(" ########################### ERROR ###########################")
+    logging.error(" ########################### ERROR ###########################")
+    logging.error(" =============================================================")
+    logging.error("              Invalid python version detected: "+str(sys.version_info[0])+"."+str(sys.version_info[1]))
+    logging.error(" =============================================================")
+    logging.error("  It seems your are still using python 2 even if you should")
+    logging.error("  now it will be retire next 2020.")
+    logging.error("  For more info please read https://pythonclock.org/")
+    logging.error(" =============================================================")
+    logging.error("  Try again typing: python3 /path/to/"+sys.argv[0])
+    logging.error(" =============================================================")
+    logging.error(" ########################### ERROR ###########################")
     exit(0)
 import tempfile
 import argparse
@@ -19,10 +22,7 @@ import os
 import requests
 import re
 import json
-import logging
-import pytz
 italyTZ = pytz.timezone("Europe/Rome")
-logging.basicConfig(format='%(levelname)s: %(message)s')
 from apiosintDS.modules import listutils, dosearch
 try:
     from urllib.parse import urlparse
