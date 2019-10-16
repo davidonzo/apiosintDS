@@ -5,7 +5,7 @@ Searches will be performed against the IoC lists stored in the [GitHub Threat-In
 ## Install
 ### The easy way via pip
 ```
-~# pip install apiosintDS
+~# pip3 install apiosintDS
 ```
 
 ### Via python-setuptools
