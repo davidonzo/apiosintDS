@@ -23,7 +23,7 @@ Command line options
 -o, --output *[/path/to/output.json]*		
 	Path to output file (/path/to/output.json). If not specified the output will be redirect to the system STDOUT.
 	
--v, --verbose					
+-v, --verbose *(bool)*			
 	Include unmatched results in report.
 	
 -c, --cache *(bool)*		
