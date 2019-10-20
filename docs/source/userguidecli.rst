@@ -9,9 +9,9 @@ Usage via command line (CLI)
                       [-cc] [-i] [-s]
 
 Command line options
-````````````````````````````````````````````````````````````````````````````````````````````````
+````````````````````
 
--h, --help
+-h, --help 
 	Show the help and exit.
 	
 -e, --entity [IPv4|domain|url]			
