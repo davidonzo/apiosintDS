@@ -1,5 +1,5 @@
-./docs/build/
-./apiosintDS.egg-info/
-./build/
-./dist/
-./test/
+docs/build/
+apiosintDS.egg-info/
+build/
+dist/
+test/
