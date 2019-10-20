@@ -18,7 +18,10 @@ class listutils():
         self.urls = {"master_url": "https://raw.githubusercontent.com/davidonzo/Threat-Intel/master/lists/latest",
                      "slave_url": "https://osint.digitalside.it/Threat-Intel/lists/latest"}
         self.cache = cache
-        self.cachedir = cachedir+"/"
+        if isinstance(cachedir, str):
+            self.cachedir = cachedir+"/"
+        else:
+            self.cachedir = False
         self.clearcache = clearcache
 
         ### !!! ### o_O

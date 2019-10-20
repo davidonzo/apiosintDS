@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import sys
 import logging
 import pytz
@@ -44,7 +43,7 @@ if platform.system() not in ['Linux']:
     
 scriptinfo = {"scriptname": "DigitalSide-API",
               "majorversion": "1",
-              "minorversion": "0",
+              "minorversion": "7",
               "license": "MIT",
               "licenseurl": "https://raw.githubusercontent.com/davidonzo/Threat-Intel/master/LICENSE",
               "author": "Davide Baglieri",
@@ -91,11 +90,11 @@ def writablecache(tmpdir):
         raise argparse.ArgumentTypeError(msg)
     return tmpdir
 
-def filebspath(directory, file):#TODO
+def filebspath(directory, file):
 	_BSR = os.path.abspath(os.path.dirname(__file__))
 	return os.path.join(_BSR, directory, file)
 
-def info(): #TODO
+def info():
     htext =  scriptinfo["scriptname"]+" v."+scriptinfo["majorversion"]+"."+scriptinfo["minorversion"]+"."
     htext += "\nOn demand query API for OSINT.digitalside.it project.\n"
     htext += "You can query for souspicious domains, urls and IPv4.\n\n"
@@ -117,6 +116,49 @@ def info(): #TODO
     htext += "\n"
     return htext
 
+def schema():
+    try:
+        schema = open(filebspath('schema', 'schema.json'), "r")
+        content = schema.read()
+        schema.close()
+        return content
+    except IOError as e:
+        logging.error(e)
+        logging.error("Unable to load schema file.")
+        exit(1)
+
+def request(entities=list, cache=False, cachedirectory=None, clearcache=False, verbose=False, *args, **kwargs):
+    if isinstance(entities, list):
+        if clearcache and ((not cache) or (cache == False)):
+            logging.error("Unable to clear cache with cache disabled. Please set the cache to 'True'")
+            exit(1)
+        if cachedirectory and ((not cache) or (cache == False)):
+            logging.error("Unable to use a cache directory with the cache option disabled. Please set the cache to 'True'")
+            exit(1)
+        if cache and not cachedirectory:
+            logging.error("When using apiosintDS as python library, you always have to specify the temporary files directory to be used.")
+            exit(1)
+        if cache:
+            try:
+                writablecache(cachedirectory)
+            except Exception as clearcacheerror:
+                logging.error(clearcacheerror)
+                exit(1)
+                
+        lutils = listutils.listutils(None, entities, cache, cachedirectory, clearcache)
+        makelist = lutils.prepareLists()
+        if isinstance(makelist, dict):
+            serarch = dosearch.dosearch(makelist, verbose)
+            results = serarch.prepareResults()
+            if isinstance(results, dict):
+                return results
+            else:
+                logging.error("create_request must return a dict.")
+        else:
+            logging.error("create_request must return a dict.")
+    else:
+        logging.error("entities must be an instance of list.")
+        exit(1)
 
 def main():
     parserdescription = scriptinfo["scriptname"]+" v."+scriptinfo["majorversion"]+"."+scriptinfo["minorversion"]+"."
