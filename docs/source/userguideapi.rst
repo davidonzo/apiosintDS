@@ -4,7 +4,7 @@ Using as Python library
 
 Below a few examples of how to use **apiosintDS** in your code. 
 
-.. prompt:: python ""
+.. code-block:: python
 
 	#!/usr/bin/env python3
 	from apiosintDS import apiosintDS

@@ -91,6 +91,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changes.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
             
@@ -158,26 +159,24 @@
   <div class="section" id="using-as-python-library">
 <h1>Using as Python library<a class="headerlink" href="#using-as-python-library" title="Permalink to this headline">¶</a></h1>
 <p>Below a few examples of how to use <strong>apiosintDS</strong> in your code.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
-span.prompt1:before {
-  content: """ ";
-}
-</style><span class="prompt1"><span class="ch">#!/usr/bin/env python3</span></span>
-<span class="prompt1"><span class="kn">from</span> <span class="nn">apiosintDS</span> <span class="kn">import</span> <span class="n">apiosintDS</span></span>
-<span class="prompt1"></span>
-<span class="prompt1"><span class="k">try</span><span class="p">:</span></span>
-<span class="prompt1">        <span class="n">OSINTCHECK</span> <span class="o">=</span> <span class="n">apiosintDS</span><span class="o">.</span><span class="n">request</span><span class="p">(</span></span>
-<span class="prompt1">                                        <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;192.168.1.54&#39;</span><span class="p">,</span></span>
-<span class="prompt1">                                                  <span class="s1">&#39;10.12.12.10&#39;</span><span class="p">,</span></span>
-<span class="prompt1">                                                  <span class="s1">&#39;somehost.ext&#39;</span><span class="p">,</span></span>
-<span class="prompt1">                                                  <span class="s1">&#39;http://www.example.com/malicious.exe&#39;</span><span class="p">],</span></span>
-<span class="prompt1">                                        <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span></span>
-<span class="prompt1">                                        <span class="n">cachedirectory</span><span class="o">=</span><span class="s2">&quot;/tmp&quot;</span><span class="p">,</span></span>
-<span class="prompt1">                                        <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span></span>
-<span class="prompt1">        <span class="k">print</span><span class="p">(</span><span class="n">OSINTCHECK</span><span class="p">)</span> <span class="c1"># print dict results</span></span>
-<span class="prompt1"><span class="k">except</span><span class="p">:</span></span>
-<span class="prompt1">        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Some error&quot;</span><span class="p">)</span> <span class="c1"># some error</span></span>
-</pre></div></div><div class="section" id="module-contents">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="kn">from</span> <span class="nn">apiosintDS</span> <span class="kn">import</span> <span class="n">apiosintDS</span>
+
+<span class="k">try</span><span class="p">:</span>
+        <span class="n">OSINTCHECK</span> <span class="o">=</span> <span class="n">apiosintDS</span><span class="o">.</span><span class="n">request</span><span class="p">(</span>
+                                        <span class="n">entities</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;192.168.1.54&#39;</span><span class="p">,</span>
+                                                  <span class="s1">&#39;10.12.12.10&#39;</span><span class="p">,</span>
+                                                  <span class="s1">&#39;somehost.ext&#39;</span><span class="p">,</span>
+                                                  <span class="s1">&#39;http://www.example.com/malicious.exe&#39;</span><span class="p">],</span>
+                                        <span class="n">cache</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+                                        <span class="n">cachedirectory</span><span class="o">=</span><span class="s2">&quot;/tmp&quot;</span><span class="p">,</span>
+                                        <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">OSINTCHECK</span><span class="p">)</span> <span class="c1"># print dict results</span>
+<span class="k">except</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Some error&quot;</span><span class="p">)</span> <span class="c1"># some error</span>
+</pre></div>
+</div>
+<div class="section" id="module-contents">
 <h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="apiosintDS.request">

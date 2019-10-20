@@ -1,0 +1,3 @@
+[console_scripts]
+apiosintDS = apiosintDS.apiosintDS:main
+

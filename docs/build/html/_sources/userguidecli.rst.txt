@@ -2,7 +2,7 @@
 Usage via command line (CLI)
 ============================
 
-.. prompt:: bash ""
+.. code-block:: bash
 
 	~$ apiosintDS [-h] [-e [IPv4|domain|url]] [-f /path/to/file.txt] 
                       [-o /path/to/output.json] [-v] [-c] [-cd /path/to/cachedir]
@@ -48,7 +48,7 @@ Command line options
 Example usage and response for one listed item
 ==============================================
 
-.. prompt:: bash ""
+.. code-block:: bash
 
 	~$ apiosintDS -e 104.217.254.20
 	{
@@ -85,7 +85,7 @@ Example usage and response submitting a file
 
 Example file ioc.txt.
 
-.. prompt:: bash ""
+.. code-block:: bash
 
 	~$ cat ioc.txt 
 	104.217.254.20
@@ -94,7 +94,7 @@ Example file ioc.txt.
 
 Response.
 
-.. prompt:: bash ""
+.. code-block:: bash
 
 	{
 	    "url": {
