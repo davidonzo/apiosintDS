@@ -1,0 +1,340 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "Validator for apiosintDS response",
+  "id": "https://github.com/davidonzo/apiosintDS/tree/master/apiosintDS/schema/schema.json",
+  "type": "object",
+  "properties": {
+    "url": {
+      "description": "Response for submitted urls",
+      "type": "object",
+      "minOccur": 0,
+      "properties": {
+        "items": {
+          "description": "Array listing results",
+          "minOccur": 0,
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "item": {
+                  "type": "string",
+                  "description": "The entity to search",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "response": {
+                  "type": "boolean",
+                  "description": "'True' if a match has been found. 'False' if no match has been found",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "response_text": {
+                  "type": "string",
+                  "description": "Just a human readble representation of the 'response' item",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "related_urls": {
+                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
+                  "minOccur": 1,
+                  "maxOccur": 1,
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "description": "The related URL",
+                      "minOccur": 0
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "item",
+                "response",
+                "response_text",
+                "related_urls"
+              ]
+            },
+          ]
+        },
+        "statistics": {
+          "type": "object",
+          "description": "Basic statistics about submitted and found urls",
+          "minOccur": 1,
+          "maxOccur": 1,
+          "properties": {
+            "itemFound": {
+              "type": "integer",
+              "description": "Numbers of found items",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "itemSubmitted": {
+              "type": "integer",
+              "description": "Numbers of submitted items",
+              "minOccur": 1,
+              "maxOccur": 1,
+            }
+          },
+          "required": [
+            "itemFound",
+            "itemSubmitted"
+          ]
+        },
+        "list": {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string",
+              "description": "The list name used for lookup",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "date": {
+              "type": "string",
+              "description": "The generated date of the list used for lookup",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "url": {
+              "type": "string",
+              "description": "The download link will be reported or a cache notice if the list has been loaded from previous generated cache",
+              "minOccur": 1,
+              "maxOccur": 1,
+            }
+          },
+          "required": [
+            "file",
+            "date",
+            "url"
+          ]
+        }
+      },
+      "required": [
+        "statistics",
+        "list"
+      ]
+    },
+      "ip": {
+      "description": "Response for submitted ips",
+      "type": "object",
+      "minOccur": 0,
+      "properties": {
+        "items": {
+          "description": "Array listing results",
+          "minOccur": 0,
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "item": {
+                  "type": "string",
+                  "description": "The entity to search",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "response": {
+                  "type": "boolean",
+                  "description": "'True' if a match has been found. 'False' if no match has been found",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "response_text": {
+                  "type": "string",
+                  "description": "Just a human readble representation of the 'response' item",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "related_urls": {
+                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
+                  "minOccur": 1,
+                  "maxOccur": 1,
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "description": "The related URL",
+                      "minOccur": 0
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "item",
+                "response",
+                "response_text",
+                "related_urls"
+              ]
+            },
+          ]
+        },
+        "statistics": {
+          "type": "object",
+          "description": "Basic statistics about submitted and found ips",
+          "minOccur": 1,
+          "maxOccur": 1,
+          "properties": {
+            "itemFound": {
+              "type": "integer",
+              "description": "Numbers of found items",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "itemSubmitted": {
+              "type": "integer",
+              "description": "Numbers of submitted items",
+              "minOccur": 1,
+              "maxOccur": 1,
+            }
+          },
+          "required": [
+            "itemFound",
+            "itemSubmitted"
+          ]
+        },
+        "list": {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string",
+              "description": "The list name used for lookup",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "date": {
+              "type": "string",
+              "description": "The generated date of the list used for lookup",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "url": {
+              "type": "string",
+              "description": "The download link will be reported or a cache notice if the list has been loaded from previous generated cache",
+              "minOccur": 1,
+              "maxOccur": 1,
+            }
+          },
+          "required": [
+            "file",
+            "date",
+            "url"
+          ]
+        }
+      },
+      "required": [
+        "statistics",
+        "list"
+      ]
+    },
+    "domain": {
+      "description": "Response for submitted domains",
+      "type": "object",
+      "minOccur": 0,
+      "properties": {
+        "items": {
+          "description": "Array listing results",
+          "minOccur": 0,
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "item": {
+                  "type": "string",
+                  "description": "The entity to search",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "response": {
+                  "type": "boolean",
+                  "description": "'True' if a match has been found. 'False' if no match has been found",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "response_text": {
+                  "type": "string",
+                  "description": "Just a human readble representation of the 'response' item",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "related_urls": {
+                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
+                  "minOccur": 1,
+                  "maxOccur": 1,
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "description": "The related URL",
+                      "minOccur": 0
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "item",
+                "response",
+                "response_text",
+                "related_urls"
+              ]
+            },
+          ]
+        },
+        "statistics": {
+          "type": "object",
+          "description": "Basic statistics about submitted and found domains",
+          "minOccur": 1,
+          "maxOccur": 1,
+          "properties": {
+            "itemFound": {
+              "type": "integer",
+              "description": "Numbers of found items",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "itemSubmitted": {
+              "type": "integer",
+              "description": "Numbers of submitted items",
+              "minOccur": 1,
+              "maxOccur": 1,
+            }
+          },
+          "required": [
+            "itemFound",
+            "itemSubmitted"
+          ]
+        },
+        "list": {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string",
+              "description": "The list name used for lookup",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "date": {
+              "type": "string",
+              "description": "The generated date of the list used for lookup",
+              "minOccur": 1,
+              "maxOccur": 1,
+            },
+            "url": {
+              "type": "string",
+              "description": "The download link will be reported or a cache notice if the list has been loaded from previous generated cache",
+              "minOccur": 1,
+              "maxOccur": 1,
+            }
+          },
+          "required": [
+            "file",
+            "date",
+            "url"
+          ]
+        }
+      },
+      "required": [
+        "statistics",
+        "list"
+      ]
+    }
+}

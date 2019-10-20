@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation guide &mdash; apiosintDS 1.7 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Usage via command line (CLI)" href="userguidecli.html" />
+    <link rel="prev" title="apiosintDS" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> apiosintDS
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-python-3-5-2">Install python &gt; 3.5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-via-python3-setuptools">Install via python3-setuptools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-via-pip3">Install via pip3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-support">Windows support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userguidecli.html">Usage via command line (CLI)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userguideapi.html">Using as Python library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">apiosintDS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation guide</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/install.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation-guide">
+<h1>Installation guide<a class="headerlink" href="#installation-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-python-3-5-2">
+<h2>Install python &gt; 3.5.2<a class="headerlink" href="#install-python-3-5-2" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you installed on your system python &gt; 3.5.2. Try typing <code class="docutils literal notranslate"><span class="pre">python3</span></code> on your terminal.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: """ ";
+}
+</style><span class="prompt1">~$ python3</span>
+<span class="prompt1">Python <span class="m">3</span>.6.8 <span class="o">(</span>default, Oct  <span class="m">7</span> <span class="m">2019</span>, <span class="m">12</span>:59:55<span class="o">)</span></span>
+<span class="prompt1"><span class="o">[</span>GCC <span class="m">8</span>.3.0<span class="o">]</span> on linux</span>
+<span class="prompt1">Type <span class="s2">&quot;help&quot;</span>, <span class="s2">&quot;copyright&quot;</span>, <span class="s2">&quot;credits&quot;</span> or <span class="s2">&quot;license&quot;</span> <span class="k">for</span> more information.</span>
+<span class="prompt1">&gt;&gt;&gt;</span>
+</pre></div></div></div>
+<div class="section" id="install-via-python3-setuptools">
+<h2>Install via python3-setuptools<a class="headerlink" href="#install-via-python3-setuptools" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you installed <code class="docutils literal notranslate"><span class="pre">python3-setuptools</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span></code> packages on your system. If not, install missings according your distribution.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt2:before {
+  content: "~$ ";
+}
+</style><span class="prompt2"><span class="nb">cd</span> /your/path/src/</span>
+<span class="prompt2">git clone https://github.com/davidonzo/apiosintDS.git</span>
+<span class="prompt2"><span class="nb">cd</span> apiosintDS/</span>
+<span class="prompt2">python3 setup.py build</span>
+<span class="prompt2">sudo python3 setup.py install</span>
+</pre></div></div></div>
+<div class="section" id="install-via-pip3">
+<h2>Install via pip3<a class="headerlink" href="#install-via-pip3" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you installed <code class="docutils literal notranslate"><span class="pre">python3-pip</span></code> package on your system. If not, install it according your distribution.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt3:before {
+  content: "~# ";
+}
+</style><span class="prompt3">pip3 install apiosintDS</span>
+</pre></div></div></div>
+<div class="section" id="windows-support">
+<h2>Windows support<a class="headerlink" href="#windows-support" title="Permalink to this headline">¶</a></h2>
+<p>The library has never been tested on Windows platform. Actually only UNIX system are supported.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="userguidecli.html" class="btn btn-neutral float-right" title="Usage via command line (CLI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="apiosintDS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Davide Baglieri
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
