@@ -3,3 +3,4 @@ docs/build/html
 apiosintDS.egg-info/
 build/
 dist/
+test/
