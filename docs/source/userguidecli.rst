@@ -11,35 +11,34 @@ Usage via command line (CLI)
 Command line options
 ````````````````````
 
--h, --help 
-	
+-h, --help *(bool)*
 	Show the help and exit.
 	
--e, --entity [IPv4|domain|url]			
+-e, --entity *[IPv4|domain|url]*		
 	Single item to search. Supported entities are IPv4/FQDN/URLs. It can't be used in combination with the --file option.
 	
--f, --file [/path/to/file.txt]			
+-f, --file *[/path/to/file.txt]*			
 	Path to file containing entities to search. Supported entities are IPv4/FQDN/URLs. It can't be used in combination with the --entity option.
 	
--o, --output [/path/to/output.json]		
+-o, --output *[/path/to/output.json]*		
 	Path to output file (/path/to/output.json). If not specified the output will be redirect to the system STDOUT.
 	
 -v, --verbose					
 	Include unmatched results in report.
 	
--c, --cache           				
+-c, --cache *(bool)*		
 	Enable cache mode. Downloaded lists will be stored and won't be downloaded for the next 4 hours.
 	
--cd, --cachedirectory [/path/to/cachedir]	
+-cd, --cachedirectory *[/path/to/cachedir]*	
 	The cache directory where the script check for cached lists files and where them will be stored on cache creation or update. Must be specified the same every script run unless your are using the system temp directory. Default is the temporary user directory.
 	
--cc, --clearcache     				
+-cc, --clearcache *(bool)* 				
 	Force the script to download updated lists even if the 4 hours timeout has not yet been reached. Must be used in combination with --cache.
 	
--i, --info            				
+-i, --info *(bool)*    				
 	Print information about the program.
 	
--s, --schema          				
+-s, --schema *(bool)*          				
 	Display the response `json schema <https://github.com/davidonzo/apiosintDS/blob/master/apiosintDS/schema/schema.json>`_.
 	
 
