@@ -1,4 +1,4 @@
-# DigitalSide-API v.1.6
+# DigitalSide-API v.1.7
 On demand query API for [OSINT.digitalside.it](https://osint.digitalside.it) project. You can query for souspicious IPs, domains and urls
 Searches will be performed against the IoC lists stored in the [GitHub Threat-Intel](https://github.com/davidonzo/Threat-Intel) and [OSINT.DigitalSide.it website](https://osint.digitalside.it/Threat-Intel/lists/)
 
@@ -9,7 +9,7 @@ usage: apiosintDS [-h] [-e [IPv4|domain|url]] [-f /path/to/file.txt]
                   [-o /path/to/output.json] [-v] [-c] [-cd /path/to/cachedir]
                   [-cc] [-i] [-s]
 
-DigitalSide-API v.1.0. On demand query API for OSINT.digitalside.it project.
+DigitalSide-API v.1.7. On demand query API for OSINT.digitalside.it project.
 You can query for souspicious domains, urls and IPv4.
 
 optional arguments:
@@ -35,7 +35,7 @@ optional arguments:
                         script run unless your are using the system temp
                         directory. Default is '/tmp'
   -cc, --clearcache     Force the script to download updated lists even if the
-                        3 hours timeout has not yet been reached. Must be used
+                        4 hours timeout has not yet been reached. Must be used
                         in combination with --cachedirectory.
   -i, --info            Print information about the program.
   -s, --schema          Display the response json schema.

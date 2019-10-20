@@ -23,4 +23,5 @@ Welcome to apiosintDS's documentation!
    userguidecli
    userguideapi
    changes
+   license
 
