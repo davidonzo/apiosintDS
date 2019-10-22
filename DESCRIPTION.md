@@ -1,4 +1,4 @@
-# DigitalSide-API v.1.7
+# DigitalSide-API v.1.8
 On demand query API for [OSINT.digitalside.it](https://osint.digitalside.it) project. You can query for souspicious IPs, domains and urls
 Searches will be performed against the IoC lists stored in the [GitHub Threat-Intel](https://github.com/davidonzo/Threat-Intel) and [OSINT.DigitalSide.it website](https://osint.digitalside.it/Threat-Intel/lists/)
 

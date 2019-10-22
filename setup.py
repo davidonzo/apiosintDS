@@ -25,7 +25,7 @@ with open("DESCRIPTION.md", "r") as fh:
     mylong_description = fh.read()
 scriptinfo = {"scriptname": "apiosintDS",
               "majorversion": "1",
-              "minorversion": "7",
+              "minorversion": "8",
               "license": "MIT",
               "licenseurl": "https://raw.githubusercontent.com/davidonzo/Threat-Intel/master/LICENSE",
               "author": "Davide Baglieri",
@@ -42,7 +42,7 @@ setup(
 	python_requires='>3.5.2',
 	version=scriptinfo["majorversion"]+"."+scriptinfo["minorversion"],
 	url=scriptinfo["DSGitHubHP"],
-	description="On demand query API for OSINT.digitalside.it project. You can query for souspicious domains, urls and IPv4.",
+	description="On demand query API for OSINT.digitalside.it project. You can query for souspicious domains, urls, IPv4 and file hashes.",
 	long_description=mylong_description,
 	long_description_content_type="text/markdown",
 	license=scriptinfo["license"],

@@ -1,8 +1,17 @@
 Changelog
 =========
 
-1.7  (2019-10-20)
------------------
+1.8 (2019-10-22)
+----------------
+
+* Added MD5/SHA1/SHA256 strings as entity to search
+* Added lookup to hash files for hash entities
+* Added support su hash lookup for related urls detected
+* Minor bug fixes
+* New schema json for response
+
+1.7 (2019-10-20)
+----------------
 
 * Added support to be used as standard python library
 * Added docs

@@ -12,7 +12,7 @@ Below a few examples of how to use **apiosintDS** in your code.
 	try:
 		OSINTCHECK = apiosintDS.request(
 					   	entities=['192.168.1.54', 
-					   		  '10.12.12.10', 
+					   		  '0a2d170abbf5031566377b01431e3b82d3426301', 
 					   		  'somehost.ext', 
 					   		  'http://www.example.com/malicious.exe'], 
 					   	cache=True, 

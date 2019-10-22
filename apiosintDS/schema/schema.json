@@ -18,7 +18,7 @@
               "properties": {
                 "item": {
                   "type": "string",
-                  "description": "The entity to search",
+                  "description": "The searched entity",
                   "minOccur": 1,
                   "maxOccur": 1
                 },
@@ -34,6 +34,32 @@
                   "minOccur": 1,
                   "maxOccur": 1
                 },
+                "hashes": {
+                  "description": "Hashes related to the found URL",
+                  "minOccur": 0,
+                  "maxOccur": 1,
+                  "type": "object",
+                  "properties": {
+                    "md5": {
+                      "type": "string",
+                      "description": "The MD5 hash related to the submitted URL",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    },
+                    "sha1": {
+                      "type": "string",
+                      "description": "The SHA1 hash related to the submitted URL",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "description": "The SHA256 hash related to the submitted URL",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    }
+                  }
+                },
                 "related_urls": {
                   "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
                   "minOccur": 1,
@@ -41,9 +67,43 @@
                   "type": "array",
                   "items": [
                     {
-                      "type": "string",
-                      "description": "The related URL",
-                      "minOccur": 0
+                      "type": "object",
+                      "description": "Object containing related URLs and hashes detected",
+                      "minOccur": 0,
+                      "properties": {
+                        "url": {
+                          "type": "string",
+                          "description": "Related URL detected",
+                          "minOccur": 0,
+                          "maxOccur": 1,
+                        },
+                        "hashes": {
+                          "description": "Hashes related to the found URL",
+                          "minOccur": 0,
+                          "maxOccur": 1,
+                          "type": "object",
+                          "properties": {
+                             "md5": {
+                             "type": "string",
+                             "description": "The MD5 hash related to the submitted URL",
+                                "minOccur": 0,
+                                "maxOccur": 1
+                             },
+                             "sha1": {
+                               "type": "string",
+                               "description": "The SHA1 hash related to the submitted URL",
+                               "minOccur": 0,
+                               "maxOccur": 1
+                              },
+                              "sha256": {
+                                "type": "string",
+                                "description": "The SHA256 hash related to the submitted URL",
+                                "minOccur": 0,
+                                "maxOccur": 1
+                              }
+                            }
+                          }
+                      }
                     }
                   ]
                 }
@@ -54,7 +114,7 @@
                 "response_text",
                 "related_urls"
               ]
-            },
+            }
           ]
         },
         "statistics": {
@@ -67,13 +127,13 @@
               "type": "integer",
               "description": "Numbers of found items",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "itemSubmitted": {
               "type": "integer",
               "description": "Numbers of submitted items",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             }
           },
           "required": [
@@ -88,19 +148,19 @@
               "type": "string",
               "description": "The list name used for lookup",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "date": {
               "type": "string",
               "description": "The generated date of the list used for lookup",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "url": {
               "type": "string",
               "description": "The download link will be reported or a cache notice if the list has been loaded from previous generated cache",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             }
           },
           "required": [
@@ -115,7 +175,7 @@
         "list"
       ]
     },
-      "ip": {
+    "ip": {
       "description": "Response for submitted ips",
       "type": "object",
       "minOccur": 0,
@@ -152,9 +212,43 @@
                   "type": "array",
                   "items": [
                     {
-                      "type": "string",
-                      "description": "The related URL",
-                      "minOccur": 0
+                      "type": "object",
+                      "description": "Object containing related URLs and hashes detected",
+                      "minOccur": 0,
+                      "properties": {
+                        "url": {
+                          "type": "string",
+                          "description": "Related URL detected",
+                          "minOccur": 0,
+                          "maxOccur": 1,
+                        },
+                        "hashes": {
+                          "description": "Hashes related to the found URL",
+                          "minOccur": 0,
+                          "maxOccur": 1,
+                          "type": "object",
+                          "properties": {
+                             "md5": {
+                             "type": "string",
+                             "description": "The MD5 hash related to the submitted URL",
+                                "minOccur": 0,
+                                "maxOccur": 1
+                             },
+                             "sha1": {
+                               "type": "string",
+                               "description": "The SHA1 hash related to the submitted URL",
+                               "minOccur": 0,
+                               "maxOccur": 1
+                              },
+                              "sha256": {
+                                "type": "string",
+                                "description": "The SHA256 hash related to the submitted URL",
+                                "minOccur": 0,
+                                "maxOccur": 1
+                              }
+                            }
+                          }
+                      }
                     }
                   ]
                 }
@@ -165,7 +259,7 @@
                 "response_text",
                 "related_urls"
               ]
-            },
+            }
           ]
         },
         "statistics": {
@@ -178,13 +272,13 @@
               "type": "integer",
               "description": "Numbers of found items",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "itemSubmitted": {
               "type": "integer",
               "description": "Numbers of submitted items",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             }
           },
           "required": [
@@ -199,19 +293,19 @@
               "type": "string",
               "description": "The list name used for lookup",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "date": {
               "type": "string",
               "description": "The generated date of the list used for lookup",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "url": {
               "type": "string",
               "description": "The download link will be reported or a cache notice if the list has been loaded from previous generated cache",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             }
           },
           "required": [
@@ -256,6 +350,32 @@
                   "minOccur": 1,
                   "maxOccur": 1
                 },
+                "hashes": {
+                  "description": "Hashes related to the found URL",
+                  "minOccur": 0,
+                  "maxOccur": 1,
+                  "type": "object",
+                  "properties": {
+                    "md5": {
+                      "type": "string",
+                      "description": "The MD5 hash related to the submitted URL",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    },
+                    "sha1": {
+                      "type": "string",
+                      "description": "The SHA1 hash related to the submitted URL",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "description": "The SHA256 hash related to the submitted URL",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    }
+                  }
+                },
                 "related_urls": {
                   "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
                   "minOccur": 1,
@@ -276,7 +396,7 @@
                 "response_text",
                 "related_urls"
               ]
-            },
+            }
           ]
         },
         "statistics": {
@@ -289,13 +409,13 @@
               "type": "integer",
               "description": "Numbers of found items",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "itemSubmitted": {
               "type": "integer",
               "description": "Numbers of submitted items",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             }
           },
           "required": [
@@ -310,19 +430,19 @@
               "type": "string",
               "description": "The list name used for lookup",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "date": {
               "type": "string",
               "description": "The generated date of the list used for lookup",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             },
             "url": {
               "type": "string",
               "description": "The download link will be reported or a cache notice if the list has been loaded from previous generated cache",
               "minOccur": 1,
-              "maxOccur": 1,
+              "maxOccur": 1
             }
           },
           "required": [
@@ -337,4 +457,5 @@
         "list"
       ]
     }
+  }
 }

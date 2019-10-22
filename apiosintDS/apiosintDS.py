@@ -165,7 +165,7 @@ def main():
     parserdescription +=" On demand query API for OSINT.digitalside.it project."
     parserdescription +=" You can query for souspicious domains, urls and IPv4."
     parser = argparse.ArgumentParser(description=parserdescription)
-    parser.add_argument("-e","--entity", type=str, action="store", metavar="[IPv4|domain|url]", dest="ITEM", help="Single item to search. Supported entities are IPv4/FQDN/URLs. It can't be used in combination with the --file option.", default=None)
+    parser.add_argument("-e","--entity", type=str, action="store", metavar="[IPv4|domain|url|hash]", dest="ITEM", help="Single item to search. Supported entities are IPv4/FQDN/URLs and file hashes in md5, sha1 or sha256. It can't be used in combination with the --file option.", default=None)
     parser.add_argument("-f","--file", type=checkfile, action="store", metavar="/path/to/file.txt", dest="FILE", help="Path to file containing entities to search. Supported entities are IPv4/FQDN/URLs. It can't be used in combination with the --entity option.", default=None)
     parser.add_argument("-o", "--output", type=writablefile, action="store", metavar="/path/to/output.json", dest="OUTPUT", help="Path to output file (/path/to/output.json). If not specified the output will be redirect to the STDOUT.", default=None)
     parser.add_argument("-v", "--verbose", action="store_true", dest="VERBOSE", help="Include unmatched results in report.")
