@@ -98,7 +98,7 @@ class listutils():
         for entity in self.entities["centities"]:
             getHash = (True if entity == "hash" else False)
             cached[entity] = {}
-            cached[entity]["file"] = "latest"+entity+"s.txt"
+            cached[entity]["file"] = "latest"+entity+"es.txt" if entity == "hash" else "latest"+entity+"s.txt"
             if (self.entities["centities"][entity] == 0) and (entity in ["ip", "domain"]):
                 pass
             else:
@@ -107,12 +107,15 @@ class listutils():
                     if os.path.exists(cachedfile):
                         if self.clearcache:
                             dwlist = self.downloadLists(entity, getHash)
-                            cached[entity]["date"] = self.getListDate(dwlist["text"])
-                            cached[entity]["items"] = self.getListItems(dwlist["text"])
+                            cached[entity]["date"] = self.getListDate(dwlist["text"], getHash)
+                            cached[entity]["items"] = self.getListItems(dwlist["text"], getHash)
                             cached[entity]["url"] = dwlist["url"]
                         else:
                             if entity == "hash":
-                                dwlist = json.loads(cacheddownloadListsfile)
+                                cacheHandler = open(cachedfile, 'r')
+                                content = cacheHandler.read()
+                                cacheHandler.close()
+                                dwlist = content
                             else:
                                 dwlist = [line.rstrip('\n') for line in open(cachedfile)]
                             
@@ -120,7 +123,6 @@ class listutils():
                             listitems = self.getListItems(dwlist, getHash)
                                 
                             diffdate = ((self.checkdate-listdate).total_seconds())/3600
-                            
                             if ((diffdate) < 4) and (len(listitems) > 0):
                                 cached[entity]["date"] = listdate
                                 cached[entity]["items"] = listitems

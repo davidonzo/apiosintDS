@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.8.2 (2019-10-25)
+------------------
+
+* Bug fix for cache management of latesthashes.txt list
+
 1.8 (2019-10-22)
 ----------------
 
