@@ -9,7 +9,7 @@ usage: apiosintDS [-h] [-e [IPv4|domain|url]] [-f /path/to/file.txt]
                   [-o /path/to/output.json] [-v] [-c] [-cd /path/to/cachedir]
                   [-cc] [-i] [-s]
 
-DigitalSide-API v.1.7. On demand query API for OSINT.digitalside.it project.
+DigitalSide-API v.1.8. On demand query API for OSINT.digitalside.it project.
 You can query for souspicious domains, urls and IPv4.
 
 optional arguments:

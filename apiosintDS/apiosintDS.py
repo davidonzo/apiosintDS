@@ -43,7 +43,7 @@ if platform.system() not in ['Linux']:
     
 scriptinfo = {"scriptname": "DigitalSide-API",
               "majorversion": "1",
-              "minorversion": "8.2",
+              "minorversion": "8.3",
               "license": "MIT",
               "licenseurl": "https://raw.githubusercontent.com/davidonzo/Threat-Intel/master/LICENSE",
               "author": "Davide Baglieri",
