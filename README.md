@@ -3,7 +3,7 @@ Latest stable release is **v2.0** (:doc:`Changelog <changes>`)
 
 **apiosintDS** is a `python client library <https://github.com/davidonzo/apiosintDS>`_ for public *API* lookup service over *OSINT* IoCs stored  at `DigitalSide Threat-Intel <https://osint.digitalside.it>`_ repository. It can be defined a **service as a library** tool designed to act both as a standard Python library to be included in your own Python application and as command line tool. Query can be performed against souspicious IPs, domains, urls and file hashes. Data stored has a 7 days retention.
 
-![apiosintDS v2.0](https://github.com/davidonzo/apiosintds/blob/master/apiosintDS.png?raw=true | width=630)
+![apiosintDS v2.0](https://raw.githubusercontent.com/davidonzo/apiosintDS/master/docs/_static/img/apiosintDS.png | width=630)
 
 `DigitalSide Threat-Intel (also on GitHub.com) <https://github.com/davidonzo/Threat-Intel>`_ shares a set of **Open Source Cyber Threat Intellegence** information, monstly based on malware analysis and compromised URLs, IPs and domains. The purpose of the project is to develop and test new wayes to hunt, analyze, collect and share relevants sets of IoCs to be used by SOC/CSIRT/CERT with minimun effort. 
 
