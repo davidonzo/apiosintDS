@@ -10,6 +10,7 @@ Latest stable release is **v2.0** (:doc:`Changelog <changes>`)
   :width: 630
   :alt: apiosintDS v2.0
 
+
 `DigitalSide Threat-Intel (also on GitHub.com) <https://github.com/davidonzo/Threat-Intel>`_ shares a set of **Open Source Cyber Threat Intellegence** information, monstly based on malware analysis and compromised URLs, IPs and domains. The purpose of the project is to develop and test new wayes to hunt, analyze, collect and share relevants sets of IoCs to be used by SOC/CSIRT/CERT with minimun effort. 
 
 This library has been specially designed for people and organizations don't want to import the whole `DigitalSide Threat-Intel <https://osint.digitalside.it>`_ dataset and prefer to use it as an on demand service.
