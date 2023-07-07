@@ -1,6 +1,23 @@
 Changelog
 =========
 
+2.0 (2023-07-07)
+----------------
+
+* Many minor bug fixes
+* Implemented python ``getLogger`` as suggested in issue `#2 <https://github.com/davidonzo/apiosintDS/issues/2>`_
+* Added `--stix` option. Dowload and parse additional information from online STIX report.
+* Added `--pretty` option. Show results in terminal with a little bit of formatting applied.
+* Added `--nocolor` option. Suppers colors in –pretty output. For accessibility purpose.
+* Added `--cachetimeout` option. Define the cache timeout in hours.
+* Added `--localdirectory` option. Absolute path to the ‘Threat-Intel’ directory related to a local project clone. Searches are performed against local data.
+* Added `--logfile` option. Define the log file path.
+* Added `--loglevel` option. Define the log level.
+* Added `--logconsole` option. Suppress log messages to the console’s `STDOUT`.
+* Added `--version` option. Show the library version.
+* Improved `apiosintDS.request` method according new available options.
+* `Documentation updated <https://apiosintds.readthedocs.io/en/latest/>`_
+
 1.8.2 (2019-10-25)
 ------------------
 

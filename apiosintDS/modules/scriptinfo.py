@@ -1,0 +1,13 @@
+scriptinfo = {"scriptname": "apiosintDS",
+	      "subscriptname": "OSINT.DigitalSide.IT Threat-Intel Repository",
+              "majorversion": "2",
+              "minorversion": "0",
+              "license": "MIT",
+              "licenseurl": "https://raw.githubusercontent.com/davidonzo/apiosintDS/master/LICENSE.txt",
+              "author": "Davide Baglieri",
+              "mail": "info[at]digitalside.it",
+              "pgp": "30B31BDA",
+              "fingerprint": "0B4C F801 E8FF E9A3 A602  D2C7 9C36 93B2 30B3 1BDA",
+              "git": "https://github.com/davidonzo/apiosintDS",
+              "DSProjectHP": "https://osint.digitalside.it",
+              "DSGitHubHP": "https://github.com/davidonzo/Threat-Intel"}

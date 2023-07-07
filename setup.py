@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 import sys
 import logging
+from apiosintDS.modules.scriptinfo import scriptinfo
 logging.basicConfig(format='%(levelname)s: %(message)s')
+log = logging.getLogger(__name__)
 if (sys.version_info < (3, 0)):#NO MORE PYTHON 2!!! https://pythonclock.org/
     logging.error(" ########################### ERROR ###########################")
     logging.error(" =============================================================")
@@ -21,11 +23,11 @@ from setuptools import setup
 from codecs import open
 
 requirements = [line.rstrip('\n') for line in open('requirements.txt')]
-with open("DESCRIPTION.md", "r") as fh:
+with open("README.md", "r") as fh:
     mylong_description = fh.read()
 scriptinfo = {"scriptname": "apiosintDS",
-              "majorversion": "1",
-              "minorversion": "8.3",
+              "majorversion": "2",
+              "minorversion": "0",
               "license": "MIT",
               "licenseurl": "https://raw.githubusercontent.com/davidonzo/Threat-Intel/master/LICENSE",
               "author": "Davide Baglieri",
@@ -38,7 +40,7 @@ scriptinfo = {"scriptname": "apiosintDS",
 
 setup(
 	name=scriptinfo["scriptname"],
-	packages=["apiosintDS", "apiosintDS.modules"],
+	packages=["apiosintDS", "apiosintDS.modules", "apiosintDS.utilities"],
 	python_requires='>3.5.2',
 	version=scriptinfo["majorversion"]+"."+scriptinfo["minorversion"],
 	url=scriptinfo["DSGitHubHP"],

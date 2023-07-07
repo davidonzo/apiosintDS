@@ -15,8 +15,8 @@ Make sure you installed on your system python > 3.5.2. Try typing ``python3`` on
 	Type "help", "copyright", "credits" or "license" for more information.
 	>>> 
 
-Install via python3-setuptools
-==============================
+Install from sources
+====================
 
 Make sure you installed ``python3-setuptools`` and ``git`` packages on your system. If not, install missings according your distribution.
 
@@ -25,8 +25,7 @@ Make sure you installed ``python3-setuptools`` and ``git`` packages on your syst
     ~$ cd /your/path/src/
     ~$ git clone https://github.com/davidonzo/apiosintDS.git
     ~$ cd apiosintDS/
-    ~$ python3 setup.py build
-    ~$ sudo python3 setup.py install
+    ~$ python3 -m pip install .
 
 Install via pip3
 ================

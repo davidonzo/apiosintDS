@@ -1,6 +1,0 @@
-===========
-apiosintDS
-===========
-
-.. include:: index.rst
-

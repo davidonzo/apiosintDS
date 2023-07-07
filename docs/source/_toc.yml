@@ -1,0 +1,20 @@
+root: index
+options:
+ maxdepth: 1
+entries:
+- file: install
+  title: Installation guide
+- file: userguidecli
+  title: Usage via command line (CLI)
+- file: cliexamples
+  title: Command Line examples
+- file: userguideapi
+  title: Using as Python library
+- file: changes
+  title: Changelog
+- file: license
+  title: License
+- url: https://github.com/davidonzo/apiosintDS
+  title: apiosintDS Project
+- url: https://osint.digitalside.it
+  title: OSINT.DigitalSide.IT

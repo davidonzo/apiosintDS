@@ -60,9 +60,149 @@
                     }
                   }
                 },
+                "online_reports": {
+                    "type": "object",
+                 "description": "Links or local path to the related reports",
+                 "minOccur": 1,
+                 "maxOccur": 1,
+                 "properties": {
+                     "MISP_EVENT": {
+                         "type": "string",
+                         "description": "URL or path to the related MISP event json file",
+                         "minOccur": 1,
+                         "maxOccur": 1
+                     },
+                     "MISP_CSV": {
+                         "type": "string",
+                         "description": "URL or path to the related MISP event CSV file",
+                         "minOccur": 1,
+                         "maxOccur": 1
+                     },
+                     "OSINTDS_REPORT": {
+                         "type": "string",
+                         "description": "URL to the related HTML report published at osint.digitalside.it",
+                         "minOccur": 1,
+                         "maxOccur": 1
+                     },
+                     "STIX": {
+                         "type": "string",
+                         "description": "URL or path to the related STIX2 json file",
+                         "minOccur": 1,
+                         "maxOccur": 1
+                     },
+                     "STIXDETAILS": {
+                         "type": "object",
+                         "description": "Details extracted by the STIX2 file. Available when option --st, --stix is True",
+                         "minOccur": 0,
+                         "maxOccur": 1,
+                         "properties": {
+                             "observed_time_frame": {
+                                "type": ["boolean", "string"],
+                                "description": "Timedelta between first and last file submission. if 'number_observed' is 1 the value is False",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "indicators_count": {
+                                 "type": "object",
+                                 "description": "Indicators count per type, as extracted by the related STIX 2 report",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                                 "properties": {
+                                     "hashes": {
+                                         "type": "integer",
+                                         "description": "Hashes count",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     },
+                                     "urls": {
+                                         "type": "integer",
+                                         "description": "Urls count",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     },
+                                     "domains": {
+                                         "type": "integer",
+                                         "description": "Domains count",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     },
+                                     "ipv4": {
+                                         "type": "integer",
+                                         "description": "IPs count",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     }
+                                 }
+                             },
+                             "tlp": {
+                                 "type": "string",
+                                 "description": "Traffic Light Protocol",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "first_observed": {
+                                 "type": "string",
+                                 "description": "First file submission date",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "last_observed": {
+                                 "type": "string",
+                                 "description": "Last file submission date",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "virus_total": {
+                                 "type": ["object", "boolean"],
+                                 "description": "Virus Total report. False in case no VT report is available",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                                 "properties": {
+                                     "vt_detection_ratio": {
+                                         "type": "string",
+                                         "description": "VT detection ratio",
+                                         "minOccur": 0,
+                                         "maxOccur": 1,
+                                     },
+                                     "vt_report": {
+                                         "type": "string",
+                                         "description": "Link to the Virus Total report",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     }
+                                 }
+                             },
+                             "filename": {
+                                 "type": "string",
+                                 "description": "Detected filename. Available only the latest filename",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "filesize": {
+                                 "type": "integer",
+                                 "description": "File size in bytes",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                                                    "mime_type": {
+                                 "type": "string",
+                                 "description": "File type",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "number_observed": {
+                                 "type": "integer",
+                                 "description": "How many time the file has been downloaded by the system",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             }                     
+                            }
+                          }
+                        }
+                       },
                 "related_urls": {
                   "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
-                  "minOccur": 1,
+                  "minOccur": 0,
                   "maxOccur": 1,
                   "type": "array",
                   "items": [
@@ -111,8 +251,7 @@
               "required": [
                 "item",
                 "response",
-                "response_text",
-                "related_urls"
+                "response_text"
               ]
             }
           ]
@@ -123,13 +262,13 @@
           "minOccur": 1,
           "maxOccur": 1,
           "properties": {
-            "itemFound": {
+            "itemsFound": {
               "type": "integer",
               "description": "Numbers of found items",
               "minOccur": 1,
               "maxOccur": 1
             },
-            "itemSubmitted": {
+            "itemsSubmitted": {
               "type": "integer",
               "description": "Numbers of submitted items",
               "minOccur": 1,
@@ -137,8 +276,284 @@
             }
           },
           "required": [
-            "itemFound",
-            "itemSubmitted"
+            "itemsFound",
+            "itemsSubmitted"
+          ]
+        },
+        "list": {
+          "type": "object",
+          "properties": {
+            "file": {
+              "type": "string",
+              "description": "The list name used for lookup",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "date": {
+              "type": "string",
+              "description": "The generated date of the list used for lookup",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "url": {
+              "type": "string",
+              "description": "The download link will be reported or a cache notice if the list has been loaded from previous generated cache",
+              "minOccur": 1,
+              "maxOccur": 1
+            }
+          },
+          "required": [
+            "file",
+            "date",
+            "url"
+          ]
+        }
+      },
+      "required": [
+        "statistics",
+        "list"
+      ]
+    },
+    "hash": {
+      "description": "Response for submitted hash",
+      "type": "object",
+      "minOccur": 0,
+      "properties": {
+        "items": {
+          "description": "Array listing results",
+          "minOccur": 0,
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "item": {
+                  "type": "string",
+                  "description": "The searched entity",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "response": {
+                  "type": "boolean",
+                  "description": "'True' if a match has been found. 'False' if no match has been found",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "response_text": {
+                  "type": "string",
+                  "description": "Just a human readble representation of the 'response' item",
+                  "minOccur": 1,
+                  "maxOccur": 1
+                },
+                "hashes": {
+                  "description": "Hashes related to the found item",
+                  "minOccur": 0,
+                  "maxOccur": 1,
+                  "type": "object",
+                  "properties": {
+                    "md5": {
+                      "type": "string",
+                      "description": "The MD5 hash related to the submitted hash",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    },
+                    "sha1": {
+                      "type": "string",
+                      "description": "The SHA1 hash related to the submitted hash",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "description": "The SHA256 hash related to the submitted hash",
+                      "minOccur": 0,
+                      "maxOccur": 1
+                    }
+                  }
+                },
+                "online_reports": {
+                    "type": "object",
+                 "description": "Links or local path to the related reports",
+                 "minOccur": 1,
+                 "maxOccur": 1,
+                 "properties": {
+                     "MISP_EVENT": {
+                         "type": "string",
+                         "description": "URL or path to the related MISP event json file",
+                         "minOccur": 1,
+                         "maxOccur": 1
+                     },
+                     "MISP_CSV": {
+                         "type": "string",
+                         "description": "URL or path to the related MISP event CSV file",
+                         "minOccur": 1,
+                         "maxOccur": 1
+                     },
+                     "OSINTDS_REPORT": {
+                         "type": "string",
+                         "description": "URL to the related HTML report published at osint.digitalside.it",
+                         "minOccur": 1,
+                         "maxOccur": 1
+                     },
+                     "STIX": {
+                         "type": "string",
+                         "description": "URL or path to the related STIX2 json file",
+                         "minOccur": 1,
+                         "maxOccur": 1
+                     },
+                     "STIXDETAILS": {
+                         "type": "object",
+                         "description": "Details extracted by the STIX2 file. Available when option --st, --stix is True",
+                         "minOccur": 0,
+                         "maxOccur": 1,
+                         "properties": {
+                             "observed_time_frame": {
+                                "type": ["boolean", "string"],
+                                "description": "Timedelta between first and last file submission. if 'number_observed' is 1 the value is False",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "indicators_count": {
+                                 "type": "object",
+                                 "description": "Indicators count per type, as extracted by the related STIX 2 report",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                                 "properties": {
+                                     "hashes": {
+                                         "type": "integer",
+                                         "description": "Hashes count",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     },
+                                     "urls": {
+                                         "type": "integer",
+                                         "description": "Urls count",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     },
+                                     "domains": {
+                                         "type": "integer",
+                                         "description": "Domains count",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     },
+                                     "ipv4": {
+                                         "type": "integer",
+                                         "description": "IPs count",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     }
+                                 }
+                             },
+                             "tlp": {
+                                 "type": "string",
+                                 "description": "Traffic Light Protocol",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "first_observed": {
+                                 "type": "string",
+                                 "description": "First file submission date",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "last_observed": {
+                                 "type": "string",
+                                 "description": "Last file submission date",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "virus_total": {
+                                 "type": ["object", "boolean"],
+                                 "description": "Virus Total report. False in case no VT report is available",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                                 "properties": {
+                                     "vt_detection_ratio": {
+                                         "type": "string",
+                                         "description": "VT detection ratio",
+                                         "minOccur": 0,
+                                         "maxOccur": 1,
+                                     },
+                                     "vt_report": {
+                                         "type": "string",
+                                         "description": "Link to the Virus Total report",
+                                         "minOccur": 1,
+                                         "maxOccur": 1,
+                                     }
+                                 }
+                             },
+                             "filename": {
+                                 "type": "string",
+                                 "description": "Detected filename. Available only the latest filename",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "filesize": {
+                                 "type": "integer",
+                                 "description": "File size in bytes",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                                                    "mime_type": {
+                                 "type": "string",
+                                 "description": "File type",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             },
+                             "number_observed": {
+                                 "type": "integer",
+                                 "description": "How many time the file has been downloaded by the system",
+                                 "minOccur": 1,
+                                 "maxOccur": 1,
+                             }                     
+                            }
+                          }
+                        }
+                       },
+                "related_urls": {
+                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
+                  "minOccur": 0,
+                  "maxOccur": 1,
+                  "type": "array",
+                  "items": [
+                    {
+                      "type": "string",
+                      "description": "URLs spreading the hash file submitted",
+                      "minOccur": 0
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "item",
+                "response",
+                "response_text"
+              ]
+            }
+          ]
+        },
+        "statistics": {
+          "type": "object",
+          "description": "Basic statistics about submitted and found urls",
+          "minOccur": 1,
+          "maxOccur": 1,
+          "properties": {
+            "itemsFound": {
+              "type": "integer",
+              "description": "Numbers of found items",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "itemsSubmitted": {
+              "type": "integer",
+              "description": "Numbers of submitted items",
+              "minOccur": 1,
+              "maxOccur": 1
+            }
+          },
+          "required": [
+            "itemsFound",
+            "itemsSubmitted"
           ]
         },
         "list": {
@@ -179,10 +594,12 @@
       "description": "Response for submitted ips",
       "type": "object",
       "minOccur": 0,
+      "maxOccur": 1,
       "properties": {
         "items": {
           "description": "Array listing results",
-          "minOccur": 0,
+          "minOccur": 1,
+          "maxOccur": 1,
           "items": [
             {
               "type": "object",
@@ -206,8 +623,8 @@
                   "maxOccur": 1
                 },
                 "related_urls": {
-                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
-                  "minOccur": 1,
+                  "description": "The related URLs associated to the submitted item.",
+                  "minOccur": 0,
                   "maxOccur": 1,
                   "type": "array",
                   "items": [
@@ -247,8 +664,148 @@
                                 "maxOccur": 1
                               }
                             }
-                          }
-                      }
+                          },
+                          "online_reports": {
+                                "type": "object",
+                                "description": "Links or local path to the related reports",
+                                "minOccur": 1,
+                                "maxOccur": 1,
+                                "properties": {
+                                    "MISP_EVENT": {
+                                        "type": "string",
+                                        "description": "URL or path to the related MISP event json file",
+                                        "minOccur": 1,
+                                        "maxOccur": 1
+                                    },
+                                    "MISP_CSV": {
+                                        "type": "string",
+                                        "description": "URL or path to the related MISP event CSV file",
+                                        "minOccur": 1,
+                                        "maxOccur": 1
+                                    },
+                                    "OSINTDS_REPORT": {
+                                        "type": "string",
+                                        "description": "URL to the related HTML report published at osint.digitalside.it",
+                                        "minOccur": 1,
+                                        "maxOccur": 1
+                                    },
+                                    "STIX": {
+                                        "type": "string",
+                                        "description": "URL or path to the related STIX2 json file",
+                                        "minOccur": 1,
+                                        "maxOccur": 1
+                                    },
+                                    "STIXDETAILS": {
+                                        "type": "object",
+                                        "description": "Details extracted by the STIX2 file. Available when option --st, --stix is True",
+                                        "minOccur": 0,
+                                        "maxOccur": 1,
+                                        "properties": {
+                                            "observed_time_frame": {
+                                                "type": ["boolean", "string"],
+                                                "description": "Timedelta between first and last file submission. if 'number_observed' is 1 the value is False",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "indicators_count": {
+                                                "type": "object",
+                                                "description": "Indicators count per type, as extracted by the related STIX 2 report",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                                "properties": {
+                                                    "hashes": {
+                                                        "type": "integer",
+                                                        "description": "Hashes count",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    },
+                                                    "urls": {
+                                                        "type": "integer",
+                                                        "description": "Urls count",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    },
+                                                    "domains": {
+                                                        "type": "integer",
+                                                        "description": "Domains count",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    },
+                                                    "ipv4": {
+                                                        "type": "integer",
+                                                        "description": "IPs count",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    }
+                                                }
+                                            },
+                                            "tlp": {
+                                                "type": "string",
+                                                "description": "Traffic Light Protocol",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "first_observed": {
+                                                "type": "string",
+                                                "description": "First file submission date",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "last_observed": {
+                                                "type": "string",
+                                                "description": "Last file submission date",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "virus_total": {
+                                                "type": ["object", "boolean"],
+                                                "description": "Virus Total report. False in case no VT report is available",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                                "properties": {
+                                                    "vt_detection_ratio": {
+                                                        "type": "string",
+                                                        "description": "VT detection ratio",
+                                                        "minOccur": 0,
+                                                        "maxOccur": 1,
+                                                    },
+                                                    "vt_report": {
+                                                        "type": "string",
+                                                        "description": "Link to the Virus Total report",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    }
+                                                }
+                                            },
+                                            "filename": {
+                                                "type": "string",
+                                                "description": "Detected filename. Available only the latest filename",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "filesize": {
+                                                "type": "integer",
+                                                "description": "File size in bytes",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "mime_type": {
+                                                "type": "string",
+                                                "description": "File type",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "number_observed": {
+                                                "type": "integer",
+                                                "description": "How many time the file has been downloaded by the system",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                        }
+                                    }
+                                }
+                           }
+                        }
                     }
                   ]
                 }
@@ -256,8 +813,7 @@
               "required": [
                 "item",
                 "response",
-                "response_text",
-                "related_urls"
+                "response_text"
               ]
             }
           ]
@@ -268,13 +824,13 @@
           "minOccur": 1,
           "maxOccur": 1,
           "properties": {
-            "itemFound": {
+            "itemsFound": {
               "type": "integer",
               "description": "Numbers of found items",
               "minOccur": 1,
               "maxOccur": 1
             },
-            "itemSubmitted": {
+            "itemsSubmitted": {
               "type": "integer",
               "description": "Numbers of submitted items",
               "minOccur": 1,
@@ -282,8 +838,8 @@
             }
           },
           "required": [
-            "itemFound",
-            "itemSubmitted"
+            "itemsFound",
+            "itemsSubmitted"
           ]
         },
         "list": {
@@ -350,42 +906,192 @@
                   "minOccur": 1,
                   "maxOccur": 1
                 },
-                "hashes": {
-                  "description": "Hashes related to the found URL",
-                  "minOccur": 0,
-                  "maxOccur": 1,
-                  "type": "object",
-                  "properties": {
-                    "md5": {
-                      "type": "string",
-                      "description": "The MD5 hash related to the submitted URL",
-                      "minOccur": 0,
-                      "maxOccur": 1
-                    },
-                    "sha1": {
-                      "type": "string",
-                      "description": "The SHA1 hash related to the submitted URL",
-                      "minOccur": 0,
-                      "maxOccur": 1
-                    },
-                    "sha256": {
-                      "type": "string",
-                      "description": "The SHA256 hash related to the submitted URL",
-                      "minOccur": 0,
-                      "maxOccur": 1
-                    }
-                  }
-                },
                 "related_urls": {
-                  "description": "The related URLs associated to the submitted item. If no related IoC found, the list will be empty",
-                  "minOccur": 1,
+                  "description": "The related URLs associated to the submitted item.",
+                  "minOccur": 0,
                   "maxOccur": 1,
                   "type": "array",
                   "items": [
                     {
-                      "type": "string",
-                      "description": "The related URL",
-                      "minOccur": 0
+                      "type": "object",
+                      "description": "Object containing related URLs and hashes detected",
+                      "minOccur": 0,
+                      "properties": {
+                        "url": {
+                          "type": "string",
+                          "description": "Related URL detected",
+                          "minOccur": 0,
+                          "maxOccur": 1,
+                        },
+                        "hashes": {
+                          "description": "Hashes related to the found URL",
+                          "minOccur": 0,
+                          "maxOccur": 1,
+                          "type": "object",
+                          "properties": {
+                             "md5": {
+                             "type": "string",
+                             "description": "The MD5 hash related to the submitted URL",
+                                "minOccur": 0,
+                                "maxOccur": 1
+                             },
+                             "sha1": {
+                               "type": "string",
+                               "description": "The SHA1 hash related to the submitted URL",
+                               "minOccur": 0,
+                               "maxOccur": 1
+                              },
+                              "sha256": {
+                                "type": "string",
+                                "description": "The SHA256 hash related to the submitted URL",
+                                "minOccur": 0,
+                                "maxOccur": 1
+                              }
+                            }
+                          },
+                          "online_reports": {
+                                "type": "object",
+                                "description": "Links or local path to the related reports",
+                                "minOccur": 1,
+                                "maxOccur": 1,
+                                "properties": {
+                                    "MISP_EVENT": {
+                                        "type": "string",
+                                        "description": "URL or path to the related MISP event json file",
+                                        "minOccur": 1,
+                                        "maxOccur": 1
+                                    },
+                                    "MISP_CSV": {
+                                        "type": "string",
+                                        "description": "URL or path to the related MISP event CSV file",
+                                        "minOccur": 1,
+                                        "maxOccur": 1
+                                    },
+                                    "OSINTDS_REPORT": {
+                                        "type": "string",
+                                        "description": "URL to the related HTML report published at osint.digitalside.it",
+                                        "minOccur": 1,
+                                        "maxOccur": 1
+                                    },
+                                    "STIX": {
+                                        "type": "string",
+                                        "description": "URL or path to the related STIX2 json file",
+                                        "minOccur": 1,
+                                        "maxOccur": 1
+                                    },
+                                    "STIXDETAILS": {
+                                        "type": "object",
+                                        "description": "Details extracted by the STIX2 file. Available when option --st, --stix is True",
+                                        "minOccur": 0,
+                                        "maxOccur": 1,
+                                        "properties": {
+                                            "observed_time_frame": {
+                                                "type": ["boolean", "string"],
+                                                "description": "Timedelta between first and last file submission. if 'number_observed' is 1 the value is False",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "indicators_count": {
+                                                "type": "object",
+                                                "description": "Indicators count per type, as extracted by the related STIX 2 report",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                                "properties": {
+                                                    "hashes": {
+                                                        "type": "integer",
+                                                        "description": "Hashes count",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    },
+                                                    "urls": {
+                                                        "type": "integer",
+                                                        "description": "Urls count",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    },
+                                                    "domains": {
+                                                        "type": "integer",
+                                                        "description": "Domains count",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    },
+                                                    "ipv4": {
+                                                        "type": "integer",
+                                                        "description": "IPs count",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    }
+                                                }
+                                            },
+                                            "tlp": {
+                                                "type": "string",
+                                                "description": "Traffic Light Protocol",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "first_observed": {
+                                                "type": "string",
+                                                "description": "First file submission date",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "last_observed": {
+                                                "type": "string",
+                                                "description": "Last file submission date",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "virus_total": {
+                                                "type": ["object", "boolean"],
+                                                "description": "Virus Total report. False in case no VT report is available",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                                "properties": {
+                                                    "vt_detection_ratio": {
+                                                        "type": "string",
+                                                        "description": "VT detection ratio",
+                                                        "minOccur": 0,
+                                                        "maxOccur": 1,
+                                                    },
+                                                    "vt_report": {
+                                                        "type": "string",
+                                                        "description": "Link to the Virus Total report",
+                                                        "minOccur": 1,
+                                                        "maxOccur": 1,
+                                                    }
+                                                }
+                                            },
+                                            "filename": {
+                                                "type": "string",
+                                                "description": "Detected filename. Available only the latest filename",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "filesize": {
+                                                "type": "integer",
+                                                "description": "File size in bytes",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "mime_type": {
+                                                "type": "string",
+                                                "description": "File type",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            },
+                                            "number_observed": {
+                                                "type": "integer",
+                                                "description": "How many time the file has been downloaded by the system",
+                                                "minOccur": 1,
+                                                "maxOccur": 1,
+                                            }
+                                            
+                                            
+                                        }
+                                    }
+                                }
+                           }
+                        }
                     }
                   ]
                 }
@@ -393,8 +1099,7 @@
               "required": [
                 "item",
                 "response",
-                "response_text",
-                "related_urls"
+                "response_text"
               ]
             }
           ]
@@ -405,13 +1110,13 @@
           "minOccur": 1,
           "maxOccur": 1,
           "properties": {
-            "itemFound": {
+            "itemsFound": {
               "type": "integer",
               "description": "Numbers of found items",
               "minOccur": 1,
               "maxOccur": 1
             },
-            "itemSubmitted": {
+            "itemsSubmitted": {
               "type": "integer",
               "description": "Numbers of submitted items",
               "minOccur": 1,
@@ -419,8 +1124,8 @@
             }
           },
           "required": [
-            "itemFound",
-            "itemSubmitted"
+            "itemsFound",
+            "itemsSubmitted"
           ]
         },
         "list": {
@@ -456,6 +1161,90 @@
         "statistics",
         "list"
       ]
+    },
+    "generalstatistics":{
+        "type": "object",
+        "description": "Global statistics about the sumbission",
+        "properties": {
+            "url": {
+              "type": "integer",
+              "description": "Number of submitted urls",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "ip": {
+              "type": "integer",
+              "description": "Number of submitted ips",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "domain": {
+              "type": "integer",
+              "description": "Number of submitted domains",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "hash": {
+              "type": "integer",
+              "description": "Number of submitted hashes",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "invalid": {
+              "type": "integer",
+              "description": "Number of invalid items",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "duplicates": {
+              "type": "integer",
+              "description": "Number of duplicates",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "itemsFound": {
+              "type": "integer",
+              "description": "Number of items found",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "itemsSubmitted": {
+              "type": "integer",
+              "description": "Number of items submitted",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "urlfound": {
+              "type": "integer",
+              "description": "Number of urls found",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "ipfound": {
+              "type": "integer",
+              "description": "Number of ips found",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "domainfound": {
+              "type": "integer",
+              "description": "Number of domains found",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+            "hashfound": {
+              "type": "integer",
+              "description": "Number of hashes found",
+              "minOccur": 1,
+              "maxOccur": 1
+            },
+    },
+    "apiosintDSversion":{
+    "type": "string",
+    "description": "apiosintDS version",
+    "minOccur": 1,
+    "maxOccur": 1
     }
+   }
   }
 }
