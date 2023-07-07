@@ -1,2 +1,2 @@
 sphinx-external-toc
-git+https://github.com/sphinx-toolbox/email@translator
+git+https://github.com/sphinx-toolbox/
