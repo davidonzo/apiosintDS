@@ -102,8 +102,6 @@ class dosearch():
             if(len(ret["related_urls"])>0):
                 for relatedurls in ret["related_urls"]:
                     if relatedurls["hashes"]["md5"] != ret["hashes"]["md5"]:
-                        #print(relatedurls)
-                        #exit()
                         onlineReports = self.searchMISPSTIXCSV(relatedurls["url"], "url")
                         relatedurls["online_reports"] = onlineReports
         elif entype == 'hash':

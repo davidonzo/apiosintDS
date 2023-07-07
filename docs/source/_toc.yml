@@ -2,6 +2,8 @@ root: index
 options:
  maxdepth: 1
 entries:
+- url: https://apiosintds.readthedocs.io/en/latest/index.html
+  title: apiosintDS v2.0
 - file: install
   title: Installation guide
 - file: userguidecli

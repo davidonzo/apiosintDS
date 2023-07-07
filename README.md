@@ -1,6 +1,13 @@
-# DigitalSide-API v.2.0
-On demand query API for [OSINT.digitalside.it](https://osint.digitalside.it) project. You can query for souspicious IPs, domains, urls and file hashes.
-Searches will be performed against the IoC lists stored in the [GitHub Threat-Intel](https://github.com/davidonzo/Threat-Intel) and [OSINT.DigitalSide.it website](https://osint.digitalside.it/Threat-Intel/lists/)
+# apiosintDS
+Latest stable release is **v2.0** (:doc:`Changelog <changes>`)
+
+**apiosintDS** is a `python client library <https://github.com/davidonzo/apiosintDS>`_ for public *API* lookup service over *OSINT* IoCs stored  at `DigitalSide Threat-Intel <https://osint.digitalside.it>`_ repository. It can be defined a **service as a library** tool designed to act both as a standard Python library to be included in your own Python application and as command line tool. Query can be performed against souspicious IPs, domains, urls and file hashes. Data stored has a 7 days retention.
+
+![apiosintDS v2.0](https://github.com/davidonzo/apiosintds/blob/master/apiosintDS.png?raw=true | width=630)
+
+`DigitalSide Threat-Intel (also on GitHub.com) <https://github.com/davidonzo/Threat-Intel>`_ shares a set of **Open Source Cyber Threat Intellegence** information, monstly based on malware analysis and compromised URLs, IPs and domains. The purpose of the project is to develop and test new wayes to hunt, analyze, collect and share relevants sets of IoCs to be used by SOC/CSIRT/CERT with minimun effort. 
+
+This library has been specially designed for people and organizations don't want to import the whole `DigitalSide Threat-Intel <https://osint.digitalside.it>`_ dataset and prefer to use it as an on demand service.
 
 ## Documentation
 Complete documentation availables at [apiosintDS.ReadTheDocs.org](https://apiosintds.readthedocs.io/en/latest/)
