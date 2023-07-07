@@ -1,5 +1,5 @@
 # apiosintDS
-Latest stable release is **v2.0** (:doc:`Changelog <changes>`)
+Latest stable release is **v2.0**
 
 **apiosintDS** is a [python client library](https://github.com/davidonzo/apiosintDS) for public *API* lookup service over *OSINT* IoCs stored  at [DigitalSide Threat-Intel](https://osint.digitalside.it) repository. It can be defined a **service as a library** tool designed to act both as a standard Python library to be included in your own Python application and as command line tool. Query can be performed against souspicious IPs, domains, urls and file hashes. Data stored has a 7 days retention.
 
