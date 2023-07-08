@@ -134,21 +134,22 @@ Parameters
 	
 	.. note::
 		Before using this option, clone the GitHub project in a file system where 
-		the library has read permissions.
+		the library has read permissions. Don't forget to use `--depth=1` and `--branch=master`
+		options if you don't want to download all project commits.
+		
+		.. code-block:: bash
+			
+			$ cd /path/to/git/clone/
+			$ git clone --depth=1 --branch=master https://github.com/davidonzo/Threat-Intel.git
+		
+		When this option is in use, all cache related options are ignored. To update data
+		in your local repository destroy the existing data and clone it again.
 		
 		.. code-block:: bash
 			
 			$ cd /path/to/git/clone/
 			$ rm -rf Threat-Intel/
-			$ git fetch https://github.com/davidonzo/Threat-Intel.git
-		
-		When this option is in use, all cache related options are ignored. To update data
-		in your local repository just fetch.
-		
-		.. code-block:: bash
-			
-			$ cd /path/to/git/clone/
-			$ git fetch https://github.com/davidonzo/Threat-Intel.git
+			$ git clone --depth=1 --branch=master https://github.com/davidonzo/Threat-Intel.git
 
 .. |schema| function:: apiosintDS.schema()
 
