@@ -139,7 +139,8 @@ Parameters
 		.. code-block:: bash
 			
 			$ cd /path/to/git/clone/
-			$ git clone https://github.com/davidonzo/Threat-Intel.git
+			$ rm -rf Threat-Intel/
+			$ git fetch https://github.com/davidonzo/Threat-Intel.git
 		
 		When this option is in use, all cache related options are ignored. To update data
 		in your local repository just fetch.
