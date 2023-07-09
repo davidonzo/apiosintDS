@@ -12,6 +12,8 @@ entries:
   title: Command Line examples
 - file: userguideapi
   title: Using as Python library
+- file: userguidemisp
+  title: MISP Module
 - file: changes
   title: Changelog
 - file: license
