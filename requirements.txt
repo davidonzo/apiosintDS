@@ -1,5 +1,5 @@
-pytz==2023.3
-validators==0.20.0
+pytz
+validators
 requests
 urllib3
 stix2
