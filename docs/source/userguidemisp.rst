@@ -40,6 +40,7 @@ Configuration
 Go to your MISP web interface and login with a user account able to edit plugins configuration. Once logged in go to ``Administration >> Server Settings & Maintenance >> Plugin`` and select the ``Enrichment`` tab. Put in the search input filter ``apiosintds`` in order to show only the needed configuration settings.
 
 .. image:: ../_static/img/mispmoduleconfiguration.png
+  :width: 640
   :alt: apiosintDS MISP Module
 
 .. confval:: Plugin.Enrichment_apiosintds_enabled
@@ -146,6 +147,7 @@ Usage: hover
 Using the module as ``hover`` plugin retrived data will be displayed as follow.
 
 .. image:: ../_static/img/modulehover.png
+  :width: 640
   :alt: apiosintDS MISP Module Hover
 
 Usage: enrichment
@@ -154,6 +156,7 @@ Usage: enrichment
 Using the module as ``enrichment`` plugin retrived data will be imported as follow.
 
 .. image:: ../_static/img/moduleenrich.png
+  :width: 640
   :alt: apiosintDS MISP Module Enrichment
 
 
