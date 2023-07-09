@@ -23,16 +23,16 @@ Input / Output
 
 .. confval:: Input
 
-	The module runs against the following MISP attribute type.
+	The module runs against the following MISP attributes type.
 	
-	:input-type: ``["domain", "domain|ip", "hostname", "ip-dst", "ip-src", "ip-dst|port", "ip-src|port", 
-	                "url", "md5", "sha1", "sha256", "filename|md5", "filename|sha1", "filename|sha256"]``
+	:input-attributes: ``["domain", "domain|ip", "hostname", "ip-dst", "ip-src", "ip-dst|port", "ip-src|port"]`` 
+	             ``["url", "md5", "sha1", "sha256", "filename|md5", "filename|sha1", "filename|sha256"]``
 
 .. confval:: Output
 
-	The module returns the following MISP attribute type.
+	The module returns the following MISP attributes type.
 	
-	:output-type: ``["domain", "ip-dst", "url", "comment", "md5", "sha1", "sha256", "link", "text"]``
+	:output-attributes: ``["domain", "ip-dst", "url", "comment", "md5", "sha1", "sha256", "link", "text"]``
 
 
 Configuration
