@@ -134,7 +134,7 @@ Go to your MISP web interface and login with a user account able to edit plugins
 			
 			$ cd /path/to/git/clone/
 			$ git clone --depth=1 --branch=master https://github.com/davidonzo/Threat-Intel.git
-			$ chown -R :confval:`MISP_SYSTEM_USER`::confval:`MISP_SYSTEM_GROUP` Threat-Intel
+			$ chown -R $MISP_SYSTEM_USER`:$MISP_SYSTEM_GROUP Threat-Intel
 		
 		When this option is in use, all cache related options are ignored. To update data
 		in your local repository destroy the existing data and clone it again.
@@ -144,7 +144,7 @@ Go to your MISP web interface and login with a user account able to edit plugins
 			$ cd /path/to/git/clone/
 			$ rm -rf Threat-Intel/
 			$ git clone --depth=1 --branch=master https://github.com/davidonzo/Threat-Intel.git
-			$ chown -R :confval:`MISP_SYSTEM_USER`::confval:`MISP_SYSTEM_GROUP` Threat-Intel
+			$ chown -R $MISP_SYSTEM_USER`:$MISP_SYSTEM_GROUP Threat-Intel
 
 Usage: hover
 ````````````
