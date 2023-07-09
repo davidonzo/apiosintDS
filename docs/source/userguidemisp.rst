@@ -25,7 +25,8 @@ Input / Output
 
 	The module runs against the following MISP attribute type.
 	
-	:input-type: ``["domain", "domain|ip", "hostname", "ip-dst", "ip-src", "ip-dst|port", "ip-src|port", "url", "md5", "sha1", "sha256", "filename|md5", "filename|sha1", "filename|sha256"]``
+	:input-type: ``["domain", "domain|ip", "hostname", "ip-dst", "ip-src", "ip-dst|port", "ip-src|port", 
+	                "url", "md5", "sha1", "sha256", "filename|md5", "filename|sha1", "filename|sha256"]``
 
 .. confval:: Output
 
