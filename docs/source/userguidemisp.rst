@@ -102,7 +102,7 @@ Go to your MISP web interface and login with a user account able to edit plugins
 	
 	.. note::
 		Read and write permissions are required for the system user running the MISP instance 
-		(depends on your installation options, should be one between www-data, misp, apache, others...)	
+		(depends on your installation configuration, should be one between :confval:`www-data`, :confval:`misp`, :confval:`apache`, others...)	
 
 .. confval:: Plugin.Enrichment_apiosintds_cache_timeout_h
 	
@@ -113,7 +113,7 @@ Go to your MISP web interface and login with a user account able to edit plugins
 	
 	.. note::
 		``0`` is allowed but means no timeout. Default value is ``4`` hours. 
-		This option needs to be used in combination with :confval:`--cache` option configured to True.			
+		This option needs to be used in combination with :confval:`apiosintds_cache` option configured to True.			
 
 .. confval:: Plugin.Enrichment_apiosintds_local_directory
 	
