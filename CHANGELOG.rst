@@ -6,7 +6,7 @@ Changelog
 
 * Many minor bug fixes
 * Implemented python ``getLogger`` as suggested in issue `#2 <https://github.com/davidonzo/apiosintDS/issues/2>`_
-* Added ``--stix`` option. Dowload and parse additional information from online STIX report.
+* Added `` --stix `` option. Dowload and parse additional information from online STIX report.
 * Added ``--pretty`` option. Show results in terminal with a little bit of formatting applied.
 * Added ``--nocolor`` option. Suppers colors in –pretty output. For accessibility purpose.
 * Added ``--cachetimeout`` option. Define the cache timeout in hours.
