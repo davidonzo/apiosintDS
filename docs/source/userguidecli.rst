@@ -32,7 +32,8 @@ Command line options
 
 .. confval:: -f, --file	
 	
-	Single item to search. Supported entities are IPv4/FQDN/URLs or file hashes in MD5, SHA1 or SHA256 format.
+	Path to file containing entities to search. Supported entities are IPv4/FQDN/URLs and file hashes (MD5, SHA1, SHA256).
+	Insert one item per row.
 	
 	:type: string
 	:default: ``None``
@@ -116,7 +117,7 @@ Command line options
 	
 	.. note::
 		``0`` is allowed but means no timeout. Default value is ``4`` hours. 
-		This option needs to be used in combination with :confval:`--cache` option configured to True.	
+		This option needs to be used in combination with :confval:`--cache` option configured to ``True``.	
 
 .. confval:: -cc, --clearcache
 	
@@ -138,7 +139,7 @@ Command line options
 	
 	.. note::
 		Before using this option, clone the GitHub project in a file system where 
-		the library has read permissions. Don't forget to use `--depth=1` and `--branch=master`
+		the library has read permissions. Don't forget to use ``--depth=1`` and ``--branch=master``
 		options if you don't want to download all project commits.
 		
 		.. code-block:: bash
