@@ -46,7 +46,7 @@ Go to your MISP web interface and login with a user account able to edit plugins
 
 .. confval:: Plugin.Enrichment_apiosintds_enabled
 
-	Show the help and exit.
+	MISP internal configuration to enable or disable the module.
  	
 	:type: boolean
 	:default: ``false``
