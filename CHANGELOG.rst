@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2.0.1 (2023-07-07)
+------------------
+
+* Bug fix to stix reports cache management
+
+
 2.0 (2023-07-07)
 ----------------
 

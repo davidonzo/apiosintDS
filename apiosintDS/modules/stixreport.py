@@ -61,7 +61,7 @@ class stixreport():
                     diffdate = ((self.checkdate-reportDate).total_seconds())/3600
                 
                     if diffdate < self.cachetimeout:
-                        logger.info("Report "+self.report+" loaded from cache")
+                        self.logger.info("Report "+self.report+" loaded from cache")
                     else:
                         dwreport = self.downloadReport()
                 else:

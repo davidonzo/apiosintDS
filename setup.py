@@ -27,7 +27,7 @@ with open("README.md", "r") as fh:
     mylong_description = fh.read()
 scriptinfo = {"scriptname": "apiosintDS",
               "majorversion": "2",
-              "minorversion": "0",
+              "minorversion": "0.1",
               "license": "MIT",
               "licenseurl": "https://raw.githubusercontent.com/davidonzo/Threat-Intel/master/LICENSE",
               "author": "Davide Baglieri",
