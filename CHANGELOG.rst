@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.2 (2024-05-08)
+2.0.3 (2024-05-08)
 ------------------
 
 * Removed ``validators`` import. Regex are used instead.

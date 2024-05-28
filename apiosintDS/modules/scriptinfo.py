@@ -1,7 +1,7 @@
 scriptinfo = {"scriptname": "apiosintDS",
 	      "subscriptname": "OSINT.DigitalSide.IT Threat-Intel Repository",
               "majorversion": "2",
-              "minorversion": "0.2",
+              "minorversion": "0.3",
               "license": "MIT",
               "licenseurl": "https://raw.githubusercontent.com/davidonzo/apiosintDS/master/LICENSE.txt",
               "author": "Davide Baglieri",

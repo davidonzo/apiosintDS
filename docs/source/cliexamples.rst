@@ -22,7 +22,7 @@ One item using :confval:`--pretty`
 	   __ _ _ __ (_) ___  ___(_)_ __ | |_|  _ \/ ___| 
 	  / _` | '_ \| |/ _ \/ __| | '_ \| __| | | \___ \ 
 	 | (_| | |_) | | (_) \__ \ | | | | |_| |_| |___) |
-	  \__,_| .__/|_|\___/|___/_|_| |_|\__|____/|____/ v.2.0.2
+	  \__,_| .__/|_|\___/|___/_|_| |_|\__|____/|____/ v.2.0.3
 	       |_|OSINT.DigitalSide.IT Threat-Intel Repository                             
 
 	 Submission summary
@@ -80,7 +80,7 @@ Response.
 	   __ _ _ __ (_) ___  ___(_)_ __ | |_|  _ \/ ___| 
 	  / _` | '_ \| |/ _ \/ __| | '_ \| __| | | \___ \ 
 	 | (_| | |_) | | (_) \__ \ | | | | |_| |_| |___) |
-	  \__,_| .__/|_|\___/|___/_|_| |_|\__|____/|____/ v.2.0.2
+	  \__,_| .__/|_|\___/|___/_|_| |_|\__|____/|____/ v.2.0.3
 	       |_|OSINT.DigitalSide.IT Threat-Intel Repository                             
 
 	 Submission summary
@@ -337,5 +337,5 @@ Response.
 		"domainfound": 1,
 		"hashfound": 1
 	    },
-	    "apiosintDSversion": "apiosintDS v.2.0.2"
+	    "apiosintDSversion": "apiosintDS v.2.0.3"
 	}	
