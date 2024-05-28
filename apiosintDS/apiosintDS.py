@@ -11,7 +11,6 @@ italyTZ = pytz.timezone("Europe/Rome")
 from apiosintDS.modules import listutils, dosearch
 from apiosintDS.modules.scriptinfo import scriptinfo
 from apiosintDS.utilities import logutils, prettycli
-import validators
 import platform
 
 

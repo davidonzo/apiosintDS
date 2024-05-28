@@ -1,6 +1,13 @@
 Changelog
 =========
 
+2.0.2 (2024-05-08)
+------------------
+
+* Removed ``validators`` import. Regex are used instead.
+* Minor bug fixes
+* Improved MISP-modules version for better `compatibility <https://github.com/davidonzo/apiosintDS/issues/3>`_ with the core project.
+
 2.0.1 (2023-07-07)
 ------------------
 

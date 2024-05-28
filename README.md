@@ -1,9 +1,9 @@
 # apiosintDS
-Latest stable release is **v2.0**
+Latest stable release is **v2.0.2**
 
 **apiosintDS** is a [python client library](https://github.com/davidonzo/apiosintDS) for public *API* lookup service over *OSINT* IoCs stored  at [DigitalSide Threat-Intel](https://osint.digitalside.it) repository. It can be defined a **Service as a Library** tool designed to act both as a standard Python library to be included in your own Python application and as command line tool. Query can be performed against souspicious IPs, domains, urls and file hashes. Data stored has a 7 days retention.
 
-![apiosintDS v2.0](https://raw.githubusercontent.com/davidonzo/apiosintDS/master/docs/_static/img/apiosintDS.png)
+![apiosintDS v2.0.2](https://raw.githubusercontent.com/davidonzo/apiosintDS/master/docs/_static/img/apiosintDS.png)
 
 [DigitalSide Threat-Intel (also on GitHub.com)](https://github.com/davidonzo/Threat-Intel) shares a set of **Open Source Cyber Threat Intellegence** information, monstly based on malware analysis and compromised URLs, IPs and domains. The purpose of the project is to develop and test new wayes to hunt, analyze, collect and share relevants sets of IoCs to be used by SOC/CSIRT/CERT with minimun effort. 
 
@@ -32,7 +32,7 @@ Complete documentation availables at [apiosintDS.ReadTheDocs.org](https://apiosi
 usage: apiosintDS [-h] [-e [IPv4|domain|url|hash]] [-f /path/to/file.txt] [-st] [-o /path/to/output.json] [-p] [-nc] [-v] [-c] [-cd /path/to/cachedir] [-ct [0-9]] [-cc]
                   [-ld /path/to/git/clone/Threat-Intel/] [-ll [DEBUG|INFO|WARNING|ERROR|CRITICAL]] [-l /path/to/logfile.log] [-lc] [-i] [-s] [-vv]
 
-apiosintDS v.2.0. On demand query API for OSINT.digitalside.it project. You can query for souspicious domains, urls and IPv4.
+apiosintDS v.2.0.2. On demand query API for OSINT.digitalside.it project. You can query for souspicious domains, urls and IPv4.
 
 options:
   -h, --help            show this help message and exit
@@ -118,7 +118,7 @@ $ apiosintDS -e 7cb796c875cccc9233d82854a4e2fdf0
         "domainfound": 0,
         "hashfound": 1
     },
-    "apiosintDSversion": "apiosintDS v.2.0"
+    "apiosintDSversion": "apiosintDS v.2.0.2"
 }
 ```
 
@@ -129,7 +129,7 @@ $ apiosintDS -e h[REMOVED]p://193.35.18.147/bins/k.arm -st -p -nc
    __ _ _ __ (_) ___  ___(_)_ __ | |_|  _ \/ ___| 
   / _` | '_ \| |/ _ \/ __| | '_ \| __| | | \___ \ 
  | (_| | |_) | | (_) \__ \ | | | | |_| |_| |___) |
-  \__,_| .__/|_|\___/|___/_|_| |_|\__|____/|____/ v.2.0
+  \__,_| .__/|_|\___/|___/_|_| |_|\__|____/|____/ v.2.0.2
        |_|OSINT.DigitalSide.IT Threat-Intel Repository                             
 
  Submission summary
@@ -184,7 +184,7 @@ Response
    __ _ _ __ (_) ___  ___(_)_ __ | |_|  _ \/ ___| 
   / _` | '_ \| |/ _ \/ __| | '_ \| __| | | \___ \ 
  | (_| | |_) | | (_) \__ \ | | | | |_| |_| |___) |
-  \__,_| .__/|_|\___/|___/_|_| |_|\__|____/|____/ v.2.0
+  \__,_| .__/|_|\___/|___/_|_| |_|\__|____/|____/ v.2.0.2
        |_|OSINT.DigitalSide.IT Threat-Intel Repository                             
 
  Submission summary

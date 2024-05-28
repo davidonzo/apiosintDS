@@ -125,13 +125,8 @@ class dosearch():
         for lineurl in resUrls:
             ParseURL = urlparse(lineurl)
             if (ParseURL.hostname == item) and (lineurl != ItemURL):
-            
                 relhashes = self.searchUrlHash(lineurl)
-                
                 reldict = {'url': lineurl, 'hashes': relhashes}
-                
-                
-                
                 relatedURLs.append(reldict)
         return relatedURLs
 

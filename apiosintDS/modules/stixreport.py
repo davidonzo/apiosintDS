@@ -1,7 +1,6 @@
 import sys
 import os
 import requests
-import validators
 import json
 from datetime import datetime
 import time

@@ -1,7 +1,6 @@
 import sys
 import os
 import requests
-import validators
 import json
 from datetime import datetime
 from apiosintDS.modules.scriptinfo import scriptinfo
@@ -65,12 +64,37 @@ class listutils():
                 self.logger.warning(f'Removed {duplicate} duplicate(s) from IoCs lists to check')
         return self.items
 
+    def validatefqdn(self, domain):
+        regex = re.compile(r'(?=^.{4,253}$)(^((?!-)[a-zA-Z0-9-]{1,63}(?<!-)\.)+[a-zA-Z]{2,63}$)', re.IGNORECASE)
+
+        return regex.match(domain)
+
+    def validateurl(self, url):
+        #From django src => https://github.com/django/django/blob/stable/1.3.x/django/core/validators.py#L45
+        regex = re.compile(
+                   r'^(?:http|ftp)s?://' # http:// or https://
+                   r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|' #domain...
+                   r'localhost|' #localhost...
+                   r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})' # ...or ip
+                   r'(?::\d+)?' # optional port
+                   r'(?:/?|[/?]\S+)$', re.IGNORECASE
+        )
+
+        return regex.match(url)
+
+    def validateipv4(self, ipv4):
+        #from django src => https://github.com/django/django/blob/stable/1.3.x/django/core/validators.py#L161
+        regex = re.compile(r'^(25[0-5]|2[0-4]\d|[0-1]?\d?\d)(\.(25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}$')
+
+        return regex.match(ipv4)
+
     def validatehash(self, hstring):
         ret = False
         digits = len(hstring)
         if digits in [32, 40, 64]:
             try:
-                ret = re.match(r'^[0-9a-f]{'+str(digits)+'}$', hstring).group(0)
+                regex = re.compile(r'^[A-F0-9a-f]{'+str(digits)+'}$', re.IGNORECASE)
+                ret = regex.match(hstring.lower())
             except:
                 self.logger.info("Invalid hash detected: failed validation for ["+hstring+"]")
         else:
@@ -81,18 +105,18 @@ class listutils():
         counter = 0
         for line in self.items:
             line = line.strip()
-            if validators.url(line):
+            if self.validateurl(line):
                 counter += 1
                 self.template["url"].append(line)
-            elif validators.ipv4(line):
+            elif self.validateipv4(line):
                 counter +=1
-                self.template["ip"].append(line)
-            elif validators.domain(line):
+                self.template["ip"].append(line.lower())
+            elif self.validatefqdn(line):
                 counter +=1
-                self.template["domain"].append(line)
+                self.template["domain"].append(line.lower())
             elif self.validatehash(line):
                 counter +=1
-                self.template["hash"].append(line)
+                self.template["hash"].append(line.lower())
             elif len(line) == 0:
             	 self.logger.warning("Empty line ignored!")
             else:
